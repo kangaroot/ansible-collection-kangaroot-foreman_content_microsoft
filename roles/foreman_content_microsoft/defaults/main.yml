@@ -1,0 +1,281 @@
+---
+# noqa: var-naming[no-role-prefix]
+# defaults file for foreman_content_microsoft
+
+#######################################
+### URLS
+#######################################
+
+### MICROSOFT
+
+foreman_repo_baseurl_microsoft: https://packages.microsoft.com
+
+
+#######################################
+### ENABLE VARS
+#######################################
+
+### MICROSOFT
+
+foreman_enable_microsoft: false
+
+foreman_enable_microsoft_azure_cli: "{{ foreman_enable_microsoft | bool }}"
+
+foreman_enable_microsoft_azure_cli_el: "{{ foreman_enable_microsoft_azure_cli | bool }}"
+foreman_enable_microsoft_azure_cli_debian9: false
+foreman_enable_microsoft_azure_cli_debian10: false
+foreman_enable_microsoft_azure_cli_debian11: false
+foreman_enable_microsoft_azure_cli_debian12: false
+foreman_enable_microsoft_azure_cli_ubuntu1804: false
+foreman_enable_microsoft_azure_cli_ubuntu2004: false
+foreman_enable_microsoft_azure_cli_ubuntu2204: false
+
+foreman_enable_microsoft_edge: "{{ foreman_enable_microsoft | bool }}"
+
+foreman_enable_microsoft_edge_el: "{{ foreman_enable_microsoft_edge | bool }}"
+foreman_enable_microsoft_edge_deb: false
+
+foreman_enable_microsoft_vscode: "{{ foreman_enable_microsoft | bool }}"
+
+foreman_enable_microsoft_vscode_el: "{{ foreman_enable_microsoft_vscode | bool }}"
+foreman_enable_microsoft_vscode_deb: false
+
+foreman_enable_microsoft_prod: "{{ foreman_enable_microsoft | bool }}"
+
+foreman_enable_microsoft_prod_el7: false
+foreman_enable_microsoft_prod_el8: "{{ foreman_enable_microsoft_prod | bool }}"
+foreman_enable_microsoft_prod_el9: "{{ foreman_enable_microsoft_prod | bool }}"
+foreman_enable_microsoft_prod_fedora37: false
+foreman_enable_microsoft_prod_fedora38: false
+foreman_enable_microsoft_prod_fedora39: false
+foreman_enable_microsoft_prod_debian9: false
+foreman_enable_microsoft_prod_debian10: false
+foreman_enable_microsoft_prod_debian11: false
+foreman_enable_microsoft_prod_debian12: false
+foreman_enable_microsoft_prod_ubuntu1804: false
+foreman_enable_microsoft_prod_ubuntu2004: false
+foreman_enable_microsoft_prod_ubuntu2204: false
+
+foreman_enable_microsoft_mssql_server_2017: false
+foreman_enable_microsoft_mssql_server_2017_el7: false
+foreman_enable_microsoft_mssql_server_2017_el8: "{{ foreman_enable_microsoft_mssql_server_2017 | bool }}"
+foreman_enable_microsoft_mssql_server_2017_ubuntu1804: false
+
+foreman_enable_microsoft_mssql_server_2019: false
+foreman_enable_microsoft_mssql_server_2019_el7: false
+foreman_enable_microsoft_mssql_server_2019_el8: "{{ foreman_enable_microsoft_mssql_server_2019 | bool }}"
+foreman_enable_microsoft_mssql_server_2019_ubuntu1804: false
+foreman_enable_microsoft_mssql_server_2019_ubuntu2004: false
+
+foreman_enable_microsoft_mssql_server_2022: false
+foreman_enable_microsoft_mssql_server_2022_el8: "{{ foreman_enable_microsoft_mssql_server_2022 | bool }}"
+foreman_enable_microsoft_mssql_server_2022_el9: "{{ foreman_enable_microsoft_mssql_server_2022 | bool }}"
+foreman_enable_microsoft_mssql_server_2022_ubuntu2004: false
+foreman_enable_microsoft_mssql_server_2022_ubuntu2204: false
+
+
+#######################################
+### PRODUCT DEFAULTS
+#######################################
+
+### MICROSOFT
+
+foreman_products_defaults_download_policy_microsoft: "{{ foreman_products_defaults_download_policy }}"
+foreman_products_defaults_mirroring_policy_microsoft: mirror_content_only
+foreman_products_defaults_verify_ssl_on_sync_microsoft: "{{ foreman_products_defaults_verify_ssl_on_sync | bool }}"
+foreman_products_defaults_http_proxy_policy_microsoft: "{{ foreman_products_defaults_http_proxy_policy }}"
+foreman_products_defaults_unprotected_microsoft: "{{ foreman_products_defaults_unprotected | bool }}"
+
+
+#######################################
+### ORGANIZATION VARS
+#######################################
+
+### MICROSOFT
+
+foreman_organization_microsoft: "{{ foreman_organization }}"
+
+foreman_organization_microsoft_azure_cli: "{{ foreman_organization_microsoft }}"
+
+foreman_organization_microsoft_azure_cli_el: "{{ foreman_organization_microsoft_azure_cli }}"
+foreman_organization_microsoft_azure_cli_debian9: "{{ foreman_organization_microsoft_azure_cli }}"
+foreman_organization_microsoft_azure_cli_debian10: "{{ foreman_organization_microsoft_azure_cli }}"
+foreman_organization_microsoft_azure_cli_debian11: "{{ foreman_organization_microsoft_azure_cli }}"
+foreman_organization_microsoft_azure_cli_debian12: "{{ foreman_organization_microsoft_azure_cli }}"
+foreman_organization_microsoft_azure_cli_ubuntu1804: "{{ foreman_organization_microsoft_azure_cli }}"
+foreman_organization_microsoft_azure_cli_ubuntu2004: "{{ foreman_organization_microsoft_azure_cli }}"
+foreman_organization_microsoft_azure_cli_ubuntu2204: "{{ foreman_organization_microsoft_azure_cli }}"
+
+foreman_organization_microsoft_edge: "{{ foreman_organization_microsoft }}"
+
+foreman_organization_microsoft_edge_el: "{{ foreman_organization_microsoft_edge }}"
+foreman_organization_microsoft_edge_deb: "{{ foreman_organization_microsoft_edge }}"
+
+foreman_organization_microsoft_vscode: "{{ foreman_organization_microsoft }}"
+
+foreman_organization_microsoft_vscode_el: "{{ foreman_organization_microsoft_vscode }}"
+foreman_organization_microsoft_vscode_deb: "{{ foreman_organization_microsoft_vscode }}"
+
+foreman_organization_microsoft_prod: "{{ foreman_organization_microsoft }}"
+
+foreman_organization_microsoft_prod_el7: "{{ foreman_organization_microsoft_prod }}"
+foreman_organization_microsoft_prod_el8: "{{ foreman_organization_microsoft_prod }}"
+foreman_organization_microsoft_prod_el9: "{{ foreman_organization_microsoft_prod }}"
+foreman_organization_microsoft_prod_fedora37: "{{ foreman_organization_microsoft_prod }}"
+foreman_organization_microsoft_prod_fedora38: "{{ foreman_organization_microsoft_prod }}"
+foreman_organization_microsoft_prod_fedora39: "{{ foreman_organization_microsoft_prod }}"
+foreman_organization_microsoft_prod_debian9: "{{ foreman_organization_microsoft_prod }}"
+foreman_organization_microsoft_prod_debian10: "{{ foreman_organization_microsoft_prod }}"
+foreman_organization_microsoft_prod_debian11: "{{ foreman_organization_microsoft_prod }}"
+foreman_organization_microsoft_prod_debian12: "{{ foreman_organization_microsoft_prod }}"
+foreman_organization_microsoft_prod_ubuntu1804: "{{ foreman_organization_microsoft_prod }}"
+foreman_organization_microsoft_prod_ubuntu2004: "{{ foreman_organization_microsoft_prod }}"
+foreman_organization_microsoft_prod_ubuntu2204: "{{ foreman_organization_microsoft_prod }}"
+
+foreman_organization_microsoft_mssql_server_2017: "{{ foreman_organization_microsoft }}"
+foreman_organization_microsoft_mssql_server_2017_el7: "{{ foreman_organization_microsoft_mssql_server_2017 }}"
+foreman_organization_microsoft_mssql_server_2017_el8: "{{ foreman_organization_microsoft_mssql_server_2017 }}"
+foreman_organization_microsoft_mssql_server_2017_ubuntu1804: "{{ foreman_organization_microsoft_mssql_server_2017 }}"
+
+foreman_organization_microsoft_mssql_server_2019: "{{ foreman_organization_microsoft }}"
+foreman_organization_microsoft_mssql_server_2019_el7: "{{ foreman_organization_microsoft_mssql_server_2019 }}"
+foreman_organization_microsoft_mssql_server_2019_el8: "{{ foreman_organization_microsoft_mssql_server_2019 }}"
+foreman_organization_microsoft_mssql_server_2019_ubuntu1804: "{{ foreman_organization_microsoft_mssql_server_2019 }}"
+foreman_organization_microsoft_mssql_server_2019_ubuntu2004: "{{ foreman_organization_microsoft_mssql_server_2019 }}"
+
+foreman_organization_microsoft_mssql_server_2022: "{{ foreman_organization_microsoft }}"
+foreman_organization_microsoft_mssql_server_2022_el8: "{{ foreman_organization_microsoft_mssql_server_2022 }}"
+foreman_organization_microsoft_mssql_server_2022_el9: "{{ foreman_organization_microsoft_mssql_server_2022 }}"
+foreman_organization_microsoft_mssql_server_2022_ubuntu2004: "{{ foreman_organization_microsoft_mssql_server_2022 }}"
+foreman_organization_microsoft_mssql_server_2022_ubuntu2204: "{{ foreman_organization_microsoft_mssql_server_2022 }}"
+
+
+#######################################
+### CONTENT VIEW DEFAULTS
+#######################################
+
+### MICROSOFT
+
+foreman_cv_allow_promote_microsoft: "{{ foreman_cv_allow_promote | bool }}"
+
+foreman_cv_allow_promote_microsoft_azure_cli: "{{ foreman_cv_allow_promote_microsoft | bool }}"
+
+foreman_cv_allow_promote_microsoft_azure_cli_el: "{{ foreman_cv_allow_promote_microsoft_azure_cli | bool }}"
+foreman_cv_allow_promote_microsoft_azure_cli_debian9: "{{ foreman_cv_allow_promote_microsoft_azure_cli | bool }}"
+foreman_cv_allow_promote_microsoft_azure_cli_debian10: "{{ foreman_cv_allow_promote_microsoft_azure_cli | bool }}"
+foreman_cv_allow_promote_microsoft_azure_cli_debian11: "{{ foreman_cv_allow_promote_microsoft_azure_cli | bool }}"
+foreman_cv_allow_promote_microsoft_azure_cli_debian12: "{{ foreman_cv_allow_promote_microsoft_azure_cli | bool }}"
+foreman_cv_allow_promote_microsoft_azure_cli_ubuntu1804: "{{ foreman_cv_allow_promote_microsoft_azure_cli | bool }}"
+foreman_cv_allow_promote_microsoft_azure_cli_ubuntu2004: "{{ foreman_cv_allow_promote_microsoft_azure_cli | bool }}"
+foreman_cv_allow_promote_microsoft_azure_cli_ubuntu2204: "{{ foreman_cv_allow_promote_microsoft_azure_cli | bool }}"
+
+foreman_cv_allow_promote_microsoft_edge: "{{ foreman_cv_allow_promote_microsoft | bool }}"
+
+foreman_cv_allow_promote_microsoft_edge_el: "{{ foreman_cv_allow_promote_microsoft_edge | bool }}"
+foreman_cv_allow_promote_microsoft_edge_deb: "{{ foreman_cv_allow_promote_microsoft_edge | bool }}"
+
+foreman_cv_allow_promote_microsoft_vscode: "{{ foreman_cv_allow_promote_microsoft | bool }}"
+
+foreman_cv_allow_promote_microsoft_vscode_el: "{{ foreman_cv_allow_promote_microsoft_vscode | bool }}"
+foreman_cv_allow_promote_microsoft_vscode_deb: "{{ foreman_cv_allow_promote_microsoft_vscode | bool }}"
+
+foreman_cv_allow_promote_microsoft_prod: "{{ foreman_cv_allow_promote_microsoft | bool }}"
+
+foreman_cv_allow_promote_microsoft_prod_el7: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
+foreman_cv_allow_promote_microsoft_prod_el8: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
+foreman_cv_allow_promote_microsoft_prod_el9: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
+foreman_cv_allow_promote_microsoft_prod_fedora37: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
+foreman_cv_allow_promote_microsoft_prod_fedora38: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
+foreman_cv_allow_promote_microsoft_prod_fedora39: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
+foreman_cv_allow_promote_microsoft_prod_debian9: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
+foreman_cv_allow_promote_microsoft_prod_debian10: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
+foreman_cv_allow_promote_microsoft_prod_debian11: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
+foreman_cv_allow_promote_microsoft_prod_debian12: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
+foreman_cv_allow_promote_microsoft_prod_ubuntu1804: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
+foreman_cv_allow_promote_microsoft_prod_ubuntu2004: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
+foreman_cv_allow_promote_microsoft_prod_ubuntu2204: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
+
+foreman_cv_allow_promote_microsoft_mssql_server_2017: "{{ foreman_cv_allow_promote_microsoft | bool }}"
+foreman_cv_allow_promote_microsoft_mssql_server_2017_el7: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2017 | bool }}"
+foreman_cv_allow_promote_microsoft_mssql_server_2017_el8: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2017 | bool }}"
+foreman_cv_allow_promote_microsoft_mssql_server_2017_ubuntu1804: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2017 | bool }}"
+
+foreman_cv_allow_promote_microsoft_mssql_server_2019: "{{ foreman_cv_allow_promote_microsoft | bool }}"
+foreman_cv_allow_promote_microsoft_mssql_server_2019_el7: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2019 | bool }}"
+foreman_cv_allow_promote_microsoft_mssql_server_2019_el8: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2019 | bool }}"
+foreman_cv_allow_promote_microsoft_mssql_server_2019_ubuntu1804: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2019 | bool }}"
+foreman_cv_allow_promote_microsoft_mssql_server_2019_ubuntu2004: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2019 | bool }}"
+
+foreman_cv_allow_promote_microsoft_mssql_server_2022: "{{ foreman_cv_allow_promote_microsoft | bool }}"
+foreman_cv_allow_promote_microsoft_mssql_server_2022_el8: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2022 | bool }}"
+foreman_cv_allow_promote_microsoft_mssql_server_2022_el9: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2022 | bool }}"
+foreman_cv_allow_promote_microsoft_mssql_server_2022_ubuntu2004: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2022 | bool }}"
+foreman_cv_allow_promote_microsoft_mssql_server_2022_ubuntu2204: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2022 | bool }}"
+
+
+#######################################
+### CONTENT
+#######################################
+
+foreman_content_credentials_microsoft_main:
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-microsoft-prod"
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_microsoft ~ '/keys/microsoft.asc', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-microsoft-prod') }}"
+
+foreman_content_credentials_microsoft: "{{ ( foreman_content_credentials_microsoft_main | default([]) if foreman_enable_microsoft | bool else [] ) |
+  union( foreman_content_credentials_microsoft_azure_cli | default([]) if foreman_enable_microsoft_azure_cli | bool else [] ) |
+  union( foreman_content_credentials_microsoft_edge | default([]) if foreman_enable_microsoft_edge | bool else [] ) |
+  union( foreman_content_credentials_microsoft_vscode | default([]) if foreman_enable_microsoft_vscode | bool else [] ) |
+  union( foreman_content_credentials_microsoft_prod | default([]) if foreman_enable_microsoft_prod | bool else [] ) |
+  union( foreman_content_credentials_microsoft_mssql_server_2017 | default([]) if foreman_enable_microsoft_mssql_server_2017 | bool else [] ) |
+  union( foreman_content_credentials_microsoft_mssql_server_2019 | default([]) if foreman_enable_microsoft_mssql_server_2019 | bool else [] ) |
+  union( foreman_content_credentials_microsoft_mssql_server_2022 | default([]) if foreman_enable_microsoft_mssql_server_2022 | bool else [] )
+  }}"
+
+foreman_products_microsoft_main: []
+foreman_products_microsoft: "{{ ( foreman_products_microsoft_main | default([]) if foreman_enable_microsoft | bool else [] ) |
+  union( foreman_products_microsoft_azure_cli | default([]) if foreman_enable_microsoft_azure_cli | bool else [] ) |
+  union( foreman_products_microsoft_edge | default([]) if foreman_enable_microsoft_edge | bool else [] ) |
+  union( foreman_products_microsoft_vscode | default([]) if foreman_enable_microsoft_vscode | bool else [] ) |
+  union( foreman_products_microsoft_prod | default([]) if foreman_enable_microsoft_prod | bool else [] ) |
+  union( foreman_products_microsoft_mssql_server_2017 | default([]) if foreman_enable_microsoft_mssql_server_2017 | bool else [] ) |
+  union( foreman_products_microsoft_mssql_server_2019 | default([]) if foreman_enable_microsoft_mssql_server_2019 | bool else [] ) |
+  union( foreman_products_microsoft_mssql_server_2022 | default([]) if foreman_enable_microsoft_mssql_server_2022 | bool else [] )
+  }}"
+
+foreman_content_views_microsoft_main: []
+foreman_content_views_microsoft: "{{ ( foreman_content_views_microsoft_main | default([]) if foreman_enable_microsoft | bool else [] ) |
+  union( foreman_content_views_microsoft_azure_cli | default([]) if foreman_enable_microsoft_azure_cli | bool else [] ) |
+  union( foreman_content_views_microsoft_edge | default([]) if foreman_enable_microsoft_edge | bool else [] ) |
+  union( foreman_content_views_microsoft_vscode | default([]) if foreman_enable_microsoft_vscode | bool else [] ) |
+  union( foreman_content_views_microsoft_prod | default([]) if foreman_enable_microsoft_prod | bool else [] ) |
+  union( foreman_content_views_microsoft_mssql_server_2017 | default([]) if foreman_enable_microsoft_mssql_server_2017 | bool else [] ) |
+  union( foreman_content_views_microsoft_mssql_server_2019 | default([]) if foreman_enable_microsoft_mssql_server_2019 | bool else [] ) |
+  union( foreman_content_views_microsoft_mssql_server_2022 | default([]) if foreman_enable_microsoft_mssql_server_2022 | bool else [] )
+  }}"
+
+foreman_activation_keys_microsoft_main: []
+foreman_activation_keys_microsoft: "{{ ( foreman_activation_keys_microsoft_main | default([]) if foreman_enable_microsoft | bool else [] ) |
+  union( foreman_activation_keys_microsoft_azure_cli | default([]) if foreman_enable_microsoft_azure_cli | bool else [] ) |
+  union( foreman_activation_keys_microsoft_edge | default([]) if foreman_enable_microsoft_edge | bool else [] ) |
+  union( foreman_activation_keys_microsoft_vscode | default([]) if foreman_enable_microsoft_vscode | bool else [] ) |
+  union( foreman_activation_keys_microsoft_prod | default([]) if foreman_enable_microsoft_prod | bool else [] ) |
+  union( foreman_activation_keys_microsoft_mssql_server_2017 | default([]) if foreman_enable_microsoft_mssql_server_2017 | bool else [] ) |
+  union( foreman_activation_keys_microsoft_mssql_server_2019 | default([]) if foreman_enable_microsoft_mssql_server_2019 | bool else [] ) |
+  union( foreman_activation_keys_microsoft_mssql_server_2022 | default([]) if foreman_enable_microsoft_mssql_server_2022 | bool else [] )
+  }}"
+
+foreman_sync_plan_products_microsoft_main:
+  - "{{ foreman_product_name_prefix | default('') }}Microsoft"
+
+foreman_sync_plan_products_microsoft: "{{ ( foreman_sync_plan_products_microsoft_main | default([]) if foreman_enable_microsoft | bool else [] ) |
+  union( foreman_sync_plan_products_microsoft_azure_cli | default([]) if foreman_enable_microsoft_azure_cli | bool else [] ) |
+  union( foreman_sync_plan_products_microsoft_edge | default([]) if foreman_enable_microsoft_edge | bool else [] ) |
+  union( foreman_sync_plan_products_microsoft_vscode | default([]) if foreman_enable_microsoft_vscode | bool else [] ) |
+  union( foreman_sync_plan_products_microsoft_prod | default([]) if foreman_enable_microsoft_prod | bool else [] ) |
+  union( foreman_sync_plan_products_microsoft_mssql_server_2017 | default([]) if foreman_enable_microsoft_mssql_server_2017 | bool else [] ) |
+  union( foreman_sync_plan_products_microsoft_mssql_server_2019 | default([]) if foreman_enable_microsoft_mssql_server_2019 | bool else [] ) |
+  union( foreman_sync_plan_products_microsoft_mssql_server_2022 | default([]) if foreman_enable_microsoft_mssql_server_2022 | bool else [] )
+  }}"
+

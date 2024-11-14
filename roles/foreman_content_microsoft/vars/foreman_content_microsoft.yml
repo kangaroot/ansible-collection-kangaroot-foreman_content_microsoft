@@ -1,0 +1,871 @@
+---
+# noqa: var-naming[no-role-prefix]
+
+foreman_products_defaults: &foreman_products_defaults
+  content_type: yum
+  gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-microsoft-prod"
+  download_policy: "{{ foreman_products_defaults_download_policy_microsoft }}"
+  # mirror_on_sync: True
+  # mirroring_policy: "additive"
+  # mirroring_policy: "mirror_content_only"
+  # mirroring_policy: "mirror_complete"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_microsoft }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_microsoft | bool }}"
+  # http_proxy: Default Proxy
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_microsoft }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_microsoft | bool }}"
+
+foreman_products_defaults_debian: &foreman_products_defaults_debian
+  <<: *foreman_products_defaults
+  content_type: deb
+  # deb_releases: stable
+  deb_components: main
+  deb_architectures: amd64
+
+
+foreman_products_microsoft_azure_cli_el:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_azure_cli_el }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Azure CLI for EL"
+        label: "{{ foreman_repo_label_prefix | default('') }}azure-cli-el"
+        url: "{{ foreman_repo_baseurl_microsoft }}/yumrepos/azure-cli"
+        <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_microsoft_azure_cli_el }}"
+
+foreman_products_microsoft_azure_cli_debian9:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_azure_cli_debian9 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Azure CLI for Debian 9 (Stretch)"
+        label: "{{ foreman_repo_label_prefix | default('') }}azure-cli-debian9"
+        url: "{{ foreman_repo_baseurl_microsoft }}/repos/azure-cli/"
+        <<: *foreman_products_defaults_debian
+        organization: "{{ foreman_organization_microsoft_azure_cli_debian9 }}"
+        deb_releases: stretch
+
+foreman_products_microsoft_azure_cli_debian10:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_azure_cli_debian10 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Azure CLI for Debian 10 (Buster)"
+        label: "{{ foreman_repo_label_prefix | default('') }}azure-cli-debian10"
+        url: "{{ foreman_repo_baseurl_microsoft }}/repos/azure-cli/"
+        <<: *foreman_products_defaults_debian
+        organization: "{{ foreman_organization_microsoft_azure_cli_debian10 }}"
+        deb_releases: buster
+
+foreman_products_microsoft_azure_cli_debian11:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_azure_cli_debian11 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Azure CLI for Debian 11 (Bullseye)"
+        label: "{{ foreman_repo_label_prefix | default('') }}azure-cli-debian11"
+        url: "{{ foreman_repo_baseurl_microsoft }}/repos/azure-cli/"
+        <<: *foreman_products_defaults_debian
+        organization: "{{ foreman_organization_microsoft_azure_cli_debian11 }}"
+        deb_releases: bullseye
+
+foreman_products_microsoft_azure_cli_debian12:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_azure_cli_debian12 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Azure CLI for Debian 12 (Bookworm)"
+        label: "{{ foreman_repo_label_prefix | default('') }}azure-cli-debian12"
+        url: "{{ foreman_repo_baseurl_microsoft }}/repos/azure-cli/"
+        <<: *foreman_products_defaults_debian
+        organization: "{{ foreman_organization_microsoft_azure_cli_debian12 }}"
+        deb_releases: bookworm
+
+foreman_products_microsoft_azure_cli_ubuntu1804:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_azure_cli_ubuntu1804 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Azure CLI for Ubuntu 18.04 (Bionic Beaver)"
+        label: "{{ foreman_repo_label_prefix | default('') }}azure-cli-ubuntu1804"
+        url: "{{ foreman_repo_baseurl_microsoft }}/repos/azure-cli/"
+        <<: *foreman_products_defaults_debian
+        organization: "{{ foreman_organization_microsoft_azure_cli_ubuntu1804 }}"
+        deb_releases: bionic
+
+foreman_products_microsoft_azure_cli_ubuntu2004:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_azure_cli_ubuntu2004 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Azure CLI for Ubuntu 20.04 (Focal Fossa)"
+        label: "{{ foreman_repo_label_prefix | default('') }}azure-cli-ubuntu2004"
+        url: "{{ foreman_repo_baseurl_microsoft }}/repos/azure-cli/"
+        <<: *foreman_products_defaults_debian
+        organization: "{{ foreman_organization_microsoft_azure_cli_ubuntu2004 }}"
+        deb_releases: focal
+
+foreman_products_microsoft_azure_cli_ubuntu2204:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_azure_cli_ubuntu2204 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Azure CLI for Ubuntu 22.04 (Jammy Jellyfish)"
+        label: "{{ foreman_repo_label_prefix | default('') }}azure-cli-ubuntu2204"
+        url: "{{ foreman_repo_baseurl_microsoft }}/repos/azure-cli/"
+        <<: *foreman_products_defaults_debian
+        organization: "{{ foreman_organization_microsoft_azure_cli_ubuntu2204 }}"
+        deb_releases: jammy
+
+foreman_products_microsoft_azure_cli_main: []
+foreman_products_microsoft_azure_cli: "{{ ( foreman_products_microsoft_azure_cli_main | default([]) if foreman_enable_microsoft_azure_cli | bool else [] ) |
+  union( foreman_products_microsoft_azure_cli_el | default([]) if foreman_enable_microsoft_azure_cli_el | bool else [] ) |
+  union( foreman_products_microsoft_azure_cli_debian9 | default([]) if foreman_enable_microsoft_azure_cli_debian9 | bool else [] ) |
+  union( foreman_products_microsoft_azure_cli_debian10 | default([]) if foreman_enable_microsoft_azure_cli_debian10 | bool else [] ) |
+  union( foreman_products_microsoft_azure_cli_debian11 | default([]) if foreman_enable_microsoft_azure_cli_debian11 | bool else [] ) |
+  union( foreman_products_microsoft_azure_cli_debian12 | default([]) if foreman_enable_microsoft_azure_cli_debian12 | bool else [] ) |
+  union( foreman_products_microsoft_azure_cli_ubuntu1804 | default([]) if foreman_enable_microsoft_azure_cli_ubuntu1804 | bool else [] ) |
+  union( foreman_products_microsoft_azure_cli_ubuntu2004 | default([]) if foreman_enable_microsoft_azure_cli_ubuntu2004 | bool else [] ) |
+  union( foreman_products_microsoft_azure_cli_ubuntu2204 | default([]) if foreman_enable_microsoft_azure_cli_ubuntu2204 | bool else [] )
+  }}"
+
+
+foreman_products_microsoft_edge_el:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_edge_el }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Edge for EL"
+        label: "{{ foreman_repo_label_prefix | default('') }}microsoft-edge-yum"
+        url: "{{ foreman_repo_baseurl_microsoft }}/yumrepos/edge/"
+        <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_microsoft_edge_el }}"
+
+foreman_products_microsoft_edge_deb:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_edge_deb }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Edge for Debian/Ubuntu"
+        label: "{{ foreman_repo_label_prefix | default('') }}microsoft-edge-deb"
+        url: "{{ foreman_repo_baseurl_microsoft }}/repos/edge/"
+        <<: *foreman_products_defaults_debian
+        organization: "{{ foreman_organization_microsoft_edge_deb }}"
+        deb_releases: stable
+
+foreman_products_microsoft_edge_main: []
+foreman_products_microsoft_edge: "{{ ( foreman_products_microsoft_edge_main | default([]) if foreman_enable_microsoft_edge | bool else [] ) |
+  union( foreman_products_microsoft_edge_el | default([]) if foreman_enable_microsoft_edge_el | bool else [] ) |
+  union( foreman_products_microsoft_edge_deb | default([]) if foreman_enable_microsoft_edge_deb | bool else [] )
+  }}"
+
+
+foreman_products_microsoft_vscode_el:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_vscode_el }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Visual Studio Code for EL"
+        label: "{{ foreman_repo_label_prefix | default('') }}microsoft-vscode-yum"
+        url: "{{ foreman_repo_baseurl_microsoft }}/yumrepos/vscode/"
+        <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_microsoft_vscode_el }}"
+
+foreman_products_microsoft_vscode_deb:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_vscode_deb }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Visual Studio Code for Debian/Ubuntu"
+        label: "{{ foreman_repo_label_prefix | default('') }}microsoft-vscode-deb"
+        url: "{{ foreman_repo_baseurl_microsoft }}/repos/vscode/"
+        <<: *foreman_products_defaults_debian
+        organization: "{{ foreman_organization_microsoft_vscode_deb }}"
+        deb_releases: stable
+
+foreman_products_microsoft_vscode_main: []
+foreman_products_microsoft_vscode: "{{ ( foreman_products_microsoft_vscode_main | default([]) if foreman_enable_microsoft_vscode | bool else [] ) |
+  union( foreman_products_microsoft_vscode_el | default([]) if foreman_enable_microsoft_vscode_el | bool else [] ) |
+  union( foreman_products_microsoft_vscode_deb | default([]) if foreman_enable_microsoft_vscode_deb | bool else [] )
+  }}"
+
+
+foreman_products_microsoft_prod_el7:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_prod_el7 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - RHEL 7"
+        label: "{{ foreman_repo_label_prefix | default('') }}microsoft-prod-el7"
+        url: "{{ foreman_repo_baseurl_microsoft }}/rhel/7/prod/"
+        <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_microsoft_prod_el7 }}"
+
+foreman_products_microsoft_prod_el8:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_prod_el8 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - RHEL 8"
+        label: "{{ foreman_repo_label_prefix | default('') }}microsoft-prod-el8"
+        url: "{{ foreman_repo_baseurl_microsoft }}/rhel/8/prod/"
+        <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_microsoft_prod_el8 }}"
+
+foreman_products_microsoft_prod_el9:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_prod_el9 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - RHEL 9"
+        label: "{{ foreman_repo_label_prefix | default('') }}microsoft-prod-el9"
+        url: "{{ foreman_repo_baseurl_microsoft }}/rhel/9/prod/"
+        <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_microsoft_prod_el9 }}"
+
+foreman_products_microsoft_prod_fedora37:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_prod_fedora37 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Fedora 37"
+        label: "{{ foreman_repo_label_prefix | default('') }}microsoft-prod-fedora37"
+        url: "{{ foreman_repo_baseurl_microsoft }}/fedora/37/prod/"
+        <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_microsoft_prod_fedora37 }}"
+
+foreman_products_microsoft_prod_fedora38:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_prod_fedora38 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Fedora 38"
+        label: "{{ foreman_repo_label_prefix | default('') }}microsoft-prod-fedora38"
+        url: "{{ foreman_repo_baseurl_microsoft }}/fedora/38/prod/"
+        <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_microsoft_prod_fedora38 }}"
+
+foreman_products_microsoft_prod_fedora39:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_prod_fedora39 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Fedora 39"
+        label: "{{ foreman_repo_label_prefix | default('') }}microsoft-prod-fedora39"
+        url: "{{ foreman_repo_baseurl_microsoft }}/fedora/39/prod/"
+        <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_microsoft_prod_fedora39 }}"
+
+foreman_products_microsoft_prod_debian9:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_prod_debian9 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Debian 9 (Stretch)"
+        label: "{{ foreman_repo_label_prefix | default('') }}microsoft-prod-debian9"
+        url: "{{ foreman_repo_baseurl_microsoft }}/debian/9/prod/"
+        <<: *foreman_products_defaults_debian
+        organization: "{{ foreman_organization_microsoft_prod_debian9 }}"
+        deb_releases: stretch
+
+foreman_products_microsoft_prod_debian10:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_prod_debian10 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Debian 10 (Buster)"
+        label: "{{ foreman_repo_label_prefix | default('') }}microsoft-prod-debian10"
+        url: "{{ foreman_repo_baseurl_microsoft }}/debian/10/prod/"
+        <<: *foreman_products_defaults_debian
+        organization: "{{ foreman_organization_microsoft_prod_debian10 }}"
+        deb_releases: buster
+
+foreman_products_microsoft_prod_debian11:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_prod_debian11 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Debian 11 (Bullseye)"
+        label: "{{ foreman_repo_label_prefix | default('') }}microsoft-prod-debian11"
+        url: "{{ foreman_repo_baseurl_microsoft }}/debian/11/prod/"
+        <<: *foreman_products_defaults_debian
+        organization: "{{ foreman_organization_microsoft_prod_debian11 }}"
+        deb_releases: bullseye
+
+foreman_products_microsoft_prod_debian12:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_prod_debian12 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Debian 12 (Bookworm)"
+        label: "{{ foreman_repo_label_prefix | default('') }}microsoft-prod-debian12"
+        url: "{{ foreman_repo_baseurl_microsoft }}/debian/12/prod/"
+        <<: *foreman_products_defaults_debian
+        organization: "{{ foreman_organization_microsoft_prod_debian12 }}"
+        deb_releases: bookworm
+
+foreman_products_microsoft_prod_ubuntu1804:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_prod_ubuntu1804 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Ubuntu 18.04 (Bionic Beaver)"
+        label: "{{ foreman_repo_label_prefix | default('') }}microsoft-prod-ubuntu1804"
+        url: "{{ foreman_repo_baseurl_microsoft }}/ubuntu/18.04/prod/"
+        <<: *foreman_products_defaults_debian
+        organization: "{{ foreman_organization_microsoft_prod_ubuntu1804 }}"
+        deb_releases: bionic
+
+foreman_products_microsoft_prod_ubuntu2004:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_prod_ubuntu2004 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Ubuntu 20.04 (Focal Fossa)"
+        label: "{{ foreman_repo_label_prefix | default('') }}microsoft-prod-ubuntu2004"
+        url: "{{ foreman_repo_baseurl_microsoft }}/ubuntu/20.04/prod/"
+        <<: *foreman_products_defaults_debian
+        organization: "{{ foreman_organization_microsoft_prod_ubuntu2004 }}"
+        deb_releases: focal
+
+foreman_products_microsoft_prod_ubuntu2204:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_prod_ubuntu2204 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Ubuntu 22.04 (Jammy Jellyfish)"
+        label: "{{ foreman_repo_label_prefix | default('') }}microsoft-prod-ubuntu2204"
+        url: "{{ foreman_repo_baseurl_microsoft }}/ubuntu/22.04/prod/"
+        <<: *foreman_products_defaults_debian
+        organization: "{{ foreman_organization_microsoft_prod_ubuntu2204 }}"
+        deb_releases: jammy
+
+foreman_products_microsoft_prod_main: []
+foreman_products_microsoft_prod: "{{ ( foreman_products_microsoft_prod_main | default([]) if foreman_enable_microsoft_prod | bool else [] ) |
+  union( foreman_products_microsoft_prod_el7 | default([]) if foreman_enable_microsoft_prod_el7 | bool else [] ) |
+  union( foreman_products_microsoft_prod_el8 | default([]) if foreman_enable_microsoft_prod_el8 | bool else [] ) |
+  union( foreman_products_microsoft_prod_el9 | default([]) if foreman_enable_microsoft_prod_el9 | bool else [] ) |
+  union( foreman_products_microsoft_prod_fedora37 | default([]) if foreman_enable_microsoft_prod_fedora37 | bool else [] ) |
+  union( foreman_products_microsoft_prod_fedora38 | default([]) if foreman_enable_microsoft_prod_fedora38 | bool else [] ) |
+  union( foreman_products_microsoft_prod_fedora39 | default([]) if foreman_enable_microsoft_prod_fedora39 | bool else [] ) |
+  union( foreman_products_microsoft_prod_debian9 | default([]) if foreman_enable_microsoft_prod_debian9 | bool else [] ) |
+  union( foreman_products_microsoft_prod_debian10 | default([]) if foreman_enable_microsoft_prod_debian10 | bool else [] ) |
+  union( foreman_products_microsoft_prod_debian11 | default([]) if foreman_enable_microsoft_prod_debian11 | bool else [] ) |
+  union( foreman_products_microsoft_prod_debian12 | default([]) if foreman_enable_microsoft_prod_debian12 | bool else [] ) |
+  union( foreman_products_microsoft_prod_ubuntu1804 | default([]) if foreman_enable_microsoft_prod_ubuntu1804 | bool else [] ) |
+  union( foreman_products_microsoft_prod_ubuntu2004 | default([]) if foreman_enable_microsoft_prod_ubuntu2004 | bool else [] ) |
+  union( foreman_products_microsoft_prod_ubuntu2204 | default([]) if foreman_enable_microsoft_prod_ubuntu2204 | bool else [] )
+  }}"
+
+
+foreman_products_microsoft_mssql_server_2017_el7:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_mssql_server_2017_el7 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft SQL Server 2017 - RHEL 7"
+        label: "{{ foreman_repo_label_prefix | default('') }}mssql-server-2017-el7"
+        url: "{{ foreman_repo_baseurl_microsoft }}/rhel/7/mssql-server-2017/"
+        <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_microsoft_mssql_server_2017_el7 }}"
+
+foreman_products_microsoft_mssql_server_2017_el8:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_mssql_server_2017_el8 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft SQL Server 2017 - RHEL 8"
+        label: "{{ foreman_repo_label_prefix | default('') }}mssql-server-2017-el8"
+        url: "{{ foreman_repo_baseurl_microsoft }}/rhel/8/mssql-server-2017/"
+        <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_microsoft_mssql_server_2017_el8 }}"
+
+foreman_products_microsoft_mssql_server_2017_ubuntu1804:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_mssql_server_2017_ubuntu1804 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft SQL Server 2017 - Ubuntu 18.04 (Bionic Beaver)"
+        label: "{{ foreman_repo_label_prefix | default('') }}mssql-server-2017-ubuntu1804"
+        url: "{{ foreman_repo_baseurl_microsoft }}/ubuntu/18.04/mssql-server-2017/"
+        <<: *foreman_products_defaults_debian
+        organization: "{{ foreman_organization_microsoft_mssql_server_2017_ubuntu1804 }}"
+        deb_releases: bionic
+
+foreman_products_microsoft_mssql_server_2017_main: []
+foreman_products_microsoft_mssql_server_2017: "{{ ( foreman_products_microsoft_mssql_server_2017_main | default([]) if foreman_enable_microsoft_mssql_server_2017 | bool else [] ) |
+  union( foreman_products_microsoft_mssql_server_2017_el7 | default([]) if foreman_enable_microsoft_mssql_server_2017_el7 | bool else [] ) |
+  union( foreman_products_microsoft_mssql_server_2017_el8 | default([]) if foreman_enable_microsoft_mssql_server_2017_el8 | bool else [] ) |
+  union( foreman_products_microsoft_mssql_server_2017_ubuntu1804 | default([]) if foreman_enable_microsoft_mssql_server_2017_ubuntu1804 | bool else [] )
+  }}"
+
+
+foreman_products_microsoft_mssql_server_2019_el7:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_mssql_server_2019_el7 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft SQL Server 2019 - RHEL 7"
+        label: "{{ foreman_repo_label_prefix | default('') }}mssql-server-2019-el7"
+        url: "{{ foreman_repo_baseurl_microsoft }}/rhel/7/mssql-server-2019/"
+        <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_microsoft_mssql_server_2019_el7 }}"
+
+foreman_products_microsoft_mssql_server_2019_el8:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_mssql_server_2019_el8 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft SQL Server 2019 - RHEL 8"
+        label: "{{ foreman_repo_label_prefix | default('') }}mssql-server-2019-el8"
+        url: "{{ foreman_repo_baseurl_microsoft }}/rhel/8/mssql-server-2019/"
+        <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_microsoft_mssql_server_2019_el8 }}"
+
+foreman_products_microsoft_mssql_server_2019_ubuntu1804:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_mssql_server_2019_ubuntu1804 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft SQL Server 2019 - Ubuntu 18.04 (Bionic Beaver)"
+        label: "{{ foreman_repo_label_prefix | default('') }}mssql-server-2019-ubuntu1804"
+        url: "{{ foreman_repo_baseurl_microsoft }}/ubuntu/18.04/mssql-server-2019/"
+        <<: *foreman_products_defaults_debian
+        organization: "{{ foreman_organization_microsoft_mssql_server_2019_ubuntu1804 }}"
+        deb_releases: bionic
+
+foreman_products_microsoft_mssql_server_2019_ubuntu2004:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_mssql_server_2019_ubuntu2004 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft SQL Server 2019 - Ubuntu 20.04 (Focal Fossa)"
+        label: "{{ foreman_repo_label_prefix | default('') }}mssql-server-2019-ubuntu2004"
+        url: "{{ foreman_repo_baseurl_microsoft }}/ubuntu/20.04/mssql-server-2019/"
+        <<: *foreman_products_defaults_debian
+        organization: "{{ foreman_organization_microsoft_mssql_server_2019_ubuntu2004 }}"
+        deb_releases: focal
+
+foreman_products_microsoft_mssql_server_2019_main: []
+foreman_products_microsoft_mssql_server_2019: "{{ ( foreman_products_microsoft_mssql_server_2019_main | default([]) if foreman_enable_microsoft_mssql_server_2019 | bool else [] ) |
+  union( foreman_products_microsoft_mssql_server_2019_el7 | default([]) if foreman_enable_microsoft_mssql_server_2019_el7 | bool else [] ) |
+  union( foreman_products_microsoft_mssql_server_2019_el8 | default([]) if foreman_enable_microsoft_mssql_server_2019_el8 | bool else [] ) |
+  union( foreman_products_microsoft_mssql_server_2019_ubuntu1804 | default([]) if foreman_enable_microsoft_mssql_server_2019_ubuntu1804 | bool else [] ) |
+  union( foreman_products_microsoft_mssql_server_2019_ubuntu2004 | default([]) if foreman_enable_microsoft_mssql_server_2019_ubuntu2004 | bool else [] )
+  }}"
+
+
+foreman_products_microsoft_mssql_server_2022_el8:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_mssql_server_2022_el8 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft SQL Server 2022 - RHEL 8"
+        label: "{{ foreman_repo_label_prefix | default('') }}mssql-server-2022-el8"
+        url: "{{ foreman_repo_baseurl_microsoft }}/rhel/8/mssql-server-2022/"
+        <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_microsoft_mssql_server_2022_el8 }}"
+
+foreman_products_microsoft_mssql_server_2022_el9:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_mssql_server_2022_el9 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft SQL Server 2022 - RHEL 9"
+        label: "{{ foreman_repo_label_prefix | default('') }}mssql-server-2022-el9"
+        url: "{{ foreman_repo_baseurl_microsoft }}/rhel/9/mssql-server-2022/"
+        <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_microsoft_mssql_server_2022_el9 }}"
+
+foreman_products_microsoft_mssql_server_2022_ubuntu2004:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_mssql_server_2022_ubuntu2004 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft SQL Server 2022 - Ubuntu 20.04 (Focal Fossa)"
+        label: "{{ foreman_repo_label_prefix | default('') }}mssql-server-2022-ubuntu2004"
+        url: "{{ foreman_repo_baseurl_microsoft }}/ubuntu/20.04/mssql-server-2022/"
+        <<: *foreman_products_defaults_debian
+        organization: "{{ foreman_organization_microsoft_mssql_server_2022_ubuntu2004 }}"
+        deb_releases: focal
+
+foreman_products_microsoft_mssql_server_2022_ubuntu2204:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_mssql_server_2022_ubuntu2204 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft SQL Server 2022 - Ubuntu 22.04 (Jammy Jellyfish)"
+        label: "{{ foreman_repo_label_prefix | default('') }}mssql-server-2022-ubuntu2204"
+        url: "{{ foreman_repo_baseurl_microsoft }}/ubuntu/22.04/mssql-server-2022/"
+        <<: *foreman_products_defaults_debian
+        organization: "{{ foreman_organization_microsoft_mssql_server_2022_ubuntu2204 }}"
+        deb_releases: jammy
+
+foreman_products_microsoft_mssql_server_2022_main: []
+foreman_products_microsoft_mssql_server_2022: "{{ ( foreman_products_microsoft_mssql_server_2022_main | default([]) if foreman_enable_microsoft_mssql_server_2022 | bool else [] ) |
+  union( foreman_products_microsoft_mssql_server_2022_el8 | default([]) if foreman_enable_microsoft_mssql_server_2022_el8 | bool else [] ) |
+  union( foreman_products_microsoft_mssql_server_2022_el9 | default([]) if foreman_enable_microsoft_mssql_server_2022_el9 | bool else [] ) |
+  union( foreman_products_microsoft_mssql_server_2022_ubuntu2004 | default([]) if foreman_enable_microsoft_mssql_server_2022_ubuntu2004 | bool else [] ) |
+  union( foreman_products_microsoft_mssql_server_2022_ubuntu2204 | default([]) if foreman_enable_microsoft_mssql_server_2022_ubuntu2204 | bool else [] )
+  }}"
+
+
+foreman_content_views_microsoft_azure_cli_el:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_azure_cli_el"
+    organization: "{{ foreman_organization_microsoft_azure_cli_el }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Azure CLI for EL"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_azure_cli_el }}"
+
+foreman_content_views_microsoft_azure_cli_debian9:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_azure_cli_debian9"
+    organization: "{{ foreman_organization_microsoft_azure_cli_debian9 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Azure CLI for Debian 9 (Stretch)"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_azure_cli_debian9 }}"
+
+foreman_content_views_microsoft_azure_cli_debian10:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_azure_cli_debian10"
+    organization: "{{ foreman_organization_microsoft_azure_cli_debian10 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Azure CLI for Debian 10 (Buster)"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_azure_cli_debian10 }}"
+
+foreman_content_views_microsoft_azure_cli_debian11:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_azure_cli_debian11"
+    organization: "{{ foreman_organization_microsoft_azure_cli_debian11 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Azure CLI for Debian 11 (Bullseye)"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_azure_cli_debian11 }}"
+
+foreman_content_views_microsoft_azure_cli_debian12:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_azure_cli_debian12"
+    organization: "{{ foreman_organization_microsoft_azure_cli_debian12 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Azure CLI for Debian 12 (Bookworm)"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_azure_cli_debian12 }}"
+
+foreman_content_views_microsoft_azure_cli_ubuntu1804:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_azure_cli_ubuntu1804"
+    organization: "{{ foreman_organization_microsoft_azure_cli_ubuntu1804 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Azure CLI for Ubuntu 18.04 (Bionic Beaver)"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_azure_cli_ubuntu1804 }}"
+
+foreman_content_views_microsoft_azure_cli_ubuntu2004:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_azure_cli_ubuntu2004"
+    organization: "{{ foreman_organization_microsoft_azure_cli_ubuntu2004 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Azure CLI for Ubuntu 20.04 (Focal Fossa)"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_azure_cli_ubuntu2004 }}"
+
+foreman_content_views_microsoft_azure_cli_ubuntu2204:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_azure_cli_ubuntu2204"
+    organization: "{{ foreman_organization_microsoft_azure_cli_ubuntu2204 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Azure CLI for Ubuntu 22.04 (Jammy Jellyfish)"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_azure_cli_ubuntu2204 }}"
+
+foreman_content_views_microsoft_azure_cli_main: []
+foreman_content_views_microsoft_azure_cli: "{{ ( foreman_products_microsoft_azure_cli_main | default([]) if foreman_enable_microsoft_prod | bool else [] ) |
+  union( foreman_content_views_microsoft_azure_cli_el | default([]) if foreman_enable_microsoft_azure_cli_el | bool else [] ) |
+  union( foreman_content_views_microsoft_azure_cli_debian9 | default([]) if foreman_enable_microsoft_azure_cli_debian9 | bool else [] ) |
+  union( foreman_content_views_microsoft_azure_cli_debian10 | default([]) if foreman_enable_microsoft_azure_cli_debian10 | bool else [] ) |
+  union( foreman_content_views_microsoft_azure_cli_debian11 | default([]) if foreman_enable_microsoft_azure_cli_debian11 | bool else [] ) |
+  union( foreman_content_views_microsoft_azure_cli_debian12 | default([]) if foreman_enable_microsoft_azure_cli_debian12 | bool else [] ) |
+  union( foreman_content_views_microsoft_azure_cli_ubuntu1804 | default([]) if foreman_enable_microsoft_azure_cli_ubuntu1804 | bool else [] ) |
+  union( foreman_content_views_microsoft_azure_cli_ubuntu2004 | default([]) if foreman_enable_microsoft_azure_cli_ubuntu2004 | bool else [] ) |
+  union( foreman_content_views_microsoft_azure_cli_ubuntu2204 | default([]) if foreman_enable_microsoft_azure_cli_ubuntu2204 | bool else [] )
+  }}"
+
+
+foreman_content_views_microsoft_edge_el:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_edge_el"
+    organization: "{{ foreman_organization_microsoft_edge_el }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Edge for EL"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_edge_el }}"
+
+foreman_content_views_microsoft_edge_deb:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_edge_deb"
+    organization: "{{ foreman_organization_microsoft_edge_deb }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Edge for Debian/Ubuntu"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_edge_deb }}"
+
+foreman_content_views_microsoft_edge_main: []
+foreman_content_views_microsoft_edge: "{{ ( foreman_products_microsoft_edge_main | default([]) if foreman_enable_microsoft_edge | bool else [] ) |
+  union( foreman_content_views_microsoft_edge_el | default([]) if foreman_enable_microsoft_edge_el | bool else [] ) |
+  union( foreman_content_views_microsoft_edge_deb | default([]) if foreman_enable_microsoft_edge_deb | bool else [] )
+  }}"
+
+
+foreman_content_views_microsoft_vscode_el:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_vscode_el"
+    organization: "{{ foreman_organization_microsoft_vscode_el }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Visual Studio Code for EL"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_vscode_el }}"
+
+foreman_content_views_microsoft_vscode_deb:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_vscode_deb"
+    organization: "{{ foreman_organization_microsoft_vscode_deb }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Visual Studio Code for Debian/Ubuntu"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_vscode_deb }}"
+
+foreman_content_views_microsoft_vscode_main: []
+foreman_content_views_microsoft_vscode: "{{ ( foreman_products_microsoft_vscode_main | default([]) if foreman_enable_microsoft_vscode | bool else [] ) |
+  union( foreman_content_views_microsoft_vscode_el | default([]) if foreman_enable_microsoft_vscode_el | bool else [] ) |
+  union( foreman_content_views_microsoft_vscode_deb | default([]) if foreman_enable_microsoft_vscode_deb | bool else [] )
+  }}"
+
+
+foreman_content_views_microsoft_prod_el7:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_prod_el7"
+    organization: "{{ foreman_organization_microsoft_prod_el7 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - RHEL 7"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_prod_el7 }}"
+
+foreman_content_views_microsoft_prod_el8:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_prod_el8"
+    organization: "{{ foreman_organization_microsoft_prod_el8 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - RHEL 8"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_prod_el8 }}"
+
+foreman_content_views_microsoft_prod_el9:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_prod_el9"
+    organization: "{{ foreman_organization_microsoft_prod_el9 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - RHEL 9"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_prod_el9 }}"
+
+foreman_content_views_microsoft_prod_fedora37:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_prod_fedora37"
+    organization: "{{ foreman_organization_microsoft_prod_fedora37 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Fedora 37"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_prod_fedora37 }}"
+
+foreman_content_views_microsoft_prod_fedora38:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_prod_fedora38"
+    organization: "{{ foreman_organization_microsoft_prod_fedora38 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Fedora 38"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_prod_fedora38 }}"
+
+foreman_content_views_microsoft_prod_fedora39:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_prod_fedora39"
+    organization: "{{ foreman_organization_microsoft_prod_fedora39 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Fedora 39"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_prod_fedora39 }}"
+
+foreman_content_views_microsoft_prod_debian9:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_prod_debian9"
+    organization: "{{ foreman_organization_microsoft_prod_debian9 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Debian 9 (Stretch)"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_prod_debian9 }}"
+
+foreman_content_views_microsoft_prod_debian10:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_prod_debian10"
+    organization: "{{ foreman_organization_microsoft_prod_debian10 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Debian 10 (Buster)"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_prod_debian10 }}"
+
+foreman_content_views_microsoft_prod_debian11:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_prod_debian11"
+    organization: "{{ foreman_organization_microsoft_prod_debian11 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Debian 11 (Bullseye)"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_prod_debian11 }}"
+
+foreman_content_views_microsoft_prod_debian12:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_prod_debian12"
+    organization: "{{ foreman_organization_microsoft_prod_debian12 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Debian 12 (Bookworm)"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_prod_debian12 }}"
+
+foreman_content_views_microsoft_prod_ubuntu1804:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_prod_ubuntu1804"
+    organization: "{{ foreman_organization_microsoft_prod_ubuntu1804 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Ubuntu 18.04 (Bionic Beaver)"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_prod_ubuntu1804 }}"
+
+foreman_content_views_microsoft_prod_ubuntu2004:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_prod_ubuntu2004"
+    organization: "{{ foreman_organization_microsoft_prod_ubuntu2004 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Ubuntu 20.04 (Focal Fossa)"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_prod_ubuntu2004 }}"
+
+foreman_content_views_microsoft_prod_ubuntu2204:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_prod_ubuntu2204"
+    organization: "{{ foreman_organization_microsoft_prod_ubuntu2204 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Ubuntu 22.04 (Jammy Jellyfish)"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_prod_ubuntu2204 }}"
+
+foreman_content_views_microsoft_prod_main: []
+foreman_content_views_microsoft_prod: "{{ ( foreman_products_microsoft_prod_main | default([]) if foreman_enable_microsoft_prod | bool else [] ) |
+  union( foreman_content_views_microsoft_prod_el7 | default([]) if foreman_enable_microsoft_prod_el7 | bool else [] ) |
+  union( foreman_content_views_microsoft_prod_el8 | default([]) if foreman_enable_microsoft_prod_el8 | bool else [] ) |
+  union( foreman_content_views_microsoft_prod_el9 | default([]) if foreman_enable_microsoft_prod_el9 | bool else [] ) |
+  union( foreman_content_views_microsoft_prod_fedora37 | default([]) if foreman_enable_microsoft_prod_fedora37 | bool else [] ) |
+  union( foreman_content_views_microsoft_prod_fedora38 | default([]) if foreman_enable_microsoft_prod_fedora38 | bool else [] ) |
+  union( foreman_content_views_microsoft_prod_fedora39 | default([]) if foreman_enable_microsoft_prod_fedora39 | bool else [] ) |
+  union( foreman_content_views_microsoft_prod_debian9 | default([]) if foreman_enable_microsoft_prod_debian9 | bool else [] ) |
+  union( foreman_content_views_microsoft_prod_debian10 | default([]) if foreman_enable_microsoft_prod_debian10 | bool else [] ) |
+  union( foreman_content_views_microsoft_prod_debian11 | default([]) if foreman_enable_microsoft_prod_debian11 | bool else [] ) |
+  union( foreman_content_views_microsoft_prod_debian12 | default([]) if foreman_enable_microsoft_prod_debian12 | bool else [] ) |
+  union( foreman_content_views_microsoft_prod_ubuntu1804 | default([]) if foreman_enable_microsoft_prod_ubuntu1804 | bool else [] ) |
+  union( foreman_content_views_microsoft_prod_ubuntu2004 | default([]) if foreman_enable_microsoft_prod_ubuntu2004 | bool else [] ) |
+  union( foreman_content_views_microsoft_prod_ubuntu2204 | default([]) if foreman_enable_microsoft_prod_ubuntu2204 | bool else [] )
+  }}"
+
+
+foreman_content_views_microsoft_mssql_server_2017_el7:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}mssql_server_2017_el7"
+    organization: "{{ foreman_organization_microsoft_mssql_server_2017_el7 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft SQL Server 2017 - RHEL 7"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2017_el7 }}"
+
+foreman_content_views_microsoft_mssql_server_2017_el8:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}mssql_server_2017_el8"
+    organization: "{{ foreman_organization_microsoft_mssql_server_2017_el8 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft SQL Server 2017 - RHEL 8"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2017_el8 }}"
+
+foreman_content_views_microsoft_mssql_server_2017_ubuntu1804:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}mssql_server_2017_ubuntu1804"
+    organization: "{{ foreman_organization_microsoft_mssql_server_2017_ubuntu1804 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft SQL Server 2017 - Ubuntu 18.04 (Bionic Beaver)"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2017_ubuntu1804 }}"
+
+foreman_content_views_microsoft_mssql_server_2017_main: []
+foreman_content_views_microsoft_mssql_server_2017: "{{ ( foreman_products_microsoft_mssql_server_2017_main | default([]) if foreman_enable_microsoft_mssql_server_2017 | bool else [] ) |
+  union( foreman_content_views_microsoft_mssql_server_2017_el7 | default([]) if foreman_enable_microsoft_mssql_server_2017_el7 | bool else [] ) |
+  union( foreman_content_views_microsoft_mssql_server_2017_el8 | default([]) if foreman_enable_microsoft_mssql_server_2017_el8 | bool else [] ) |
+  union( foreman_content_views_microsoft_mssql_server_2017_ubuntu1804 | default([]) if foreman_enable_microsoft_mssql_server_2017_ubuntu1804 | bool else [] )
+  }}"
+
+
+foreman_content_views_microsoft_mssql_server_2019_el7:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}mssql_server_2019_el7"
+    organization: "{{ foreman_organization_microsoft_mssql_server_2019_el7 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft SQL Server 2019 - RHEL 7"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2019_el7 }}"
+
+foreman_content_views_microsoft_mssql_server_2019_el8:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}mssql_server_2019_el8"
+    organization: "{{ foreman_organization_microsoft_mssql_server_2019_el8 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft SQL Server 2019 - RHEL 8"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2019_el8 }}"
+
+foreman_content_views_microsoft_mssql_server_2019_ubuntu1804:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}mssql_server_2019_ubuntu1804"
+    organization: "{{ foreman_organization_microsoft_mssql_server_2019_ubuntu1804 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft SQL Server 2019 - Ubuntu 18.04 (Bionic Beaver)"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2019_ubuntu1804 }}"
+
+foreman_content_views_microsoft_mssql_server_2019_ubuntu2004:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}mssql_server_2019_ubuntu2004"
+    organization: "{{ foreman_organization_microsoft_mssql_server_2019_ubuntu2004 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft SQL Server 2019 - Ubuntu 20.04 (Focal Fossa)"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2019_ubuntu2004 }}"
+
+foreman_content_views_microsoft_mssql_server_2019_main: []
+foreman_content_views_microsoft_mssql_server_2019: "{{ ( foreman_products_microsoft_mssql_server_2019_main | default([]) if foreman_enable_microsoft_mssql_server_2019 | bool else [] ) |
+  union( foreman_content_views_microsoft_mssql_server_2019_el7 | default([]) if foreman_enable_microsoft_mssql_server_2019_el7 | bool else [] ) |
+  union( foreman_content_views_microsoft_mssql_server_2019_el8 | default([]) if foreman_enable_microsoft_mssql_server_2019_el8 | bool else [] ) |
+  union( foreman_content_views_microsoft_mssql_server_2019_ubuntu1804 | default([]) if foreman_enable_microsoft_mssql_server_2019_ubuntu1804 | bool else [] ) |
+  union( foreman_content_views_microsoft_mssql_server_2019_ubuntu2004 | default([]) if foreman_enable_microsoft_mssql_server_2019_ubuntu2004 | bool else [] )
+  }}"
+
+
+foreman_content_views_microsoft_mssql_server_2022_el8:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}mssql_server_2022_el8"
+    organization: "{{ foreman_organization_microsoft_mssql_server_2022_el8 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft SQL Server 2022 - RHEL 8"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2022_el8 }}"
+
+foreman_content_views_microsoft_mssql_server_2022_el9:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}mssql_server_2022_el9"
+    organization: "{{ foreman_organization_microsoft_mssql_server_2022_el9 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft SQL Server 2022 - RHEL 9"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2022_el9 }}"
+
+foreman_content_views_microsoft_mssql_server_2022_ubuntu2004:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}mssql_server_2022_ubuntu2004"
+    organization: "{{ foreman_organization_microsoft_mssql_server_2022_ubuntu2004 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft SQL Server 2022 - Ubuntu 20.04 (Focal Fossa)"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2022_ubuntu2004 }}"
+
+foreman_content_views_microsoft_mssql_server_2022_ubuntu2204:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}mssql_server_2022_ubuntu2204"
+    organization: "{{ foreman_organization_microsoft_mssql_server_2022_ubuntu2204 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft SQL Server 2022 - Ubuntu 22.04 (Jammy Jellyfish)"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2022_ubuntu2204 }}"
+
+foreman_content_views_microsoft_mssql_server_2022_main: []
+foreman_content_views_microsoft_mssql_server_2022: "{{ ( foreman_products_microsoft_mssql_server_2022_main | default([]) if foreman_enable_microsoft_mssql_server_2022 | bool else [] ) |
+  union( foreman_content_views_microsoft_mssql_server_2022_el8 | default([]) if foreman_enable_microsoft_mssql_server_2022_el8 | bool else [] ) |
+  union( foreman_content_views_microsoft_mssql_server_2022_el9 | default([]) if foreman_enable_microsoft_mssql_server_2022_el9 | bool else [] ) |
+  union( foreman_content_views_microsoft_mssql_server_2022_ubuntu2004 | default([]) if foreman_enable_microsoft_mssql_server_2022_ubuntu2004 | bool else [] ) |
+  union( foreman_content_views_microsoft_mssql_server_2022_ubuntu2204 | default([]) if foreman_enable_microsoft_mssql_server_2022_ubuntu2204 | bool else [] )
+  }}"
+
