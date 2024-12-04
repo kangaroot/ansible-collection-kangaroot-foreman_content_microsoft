@@ -10,7 +10,6 @@ The Microsoft repositories that can be configured from this collection are:
   - Debian 10 (Buster)
   - Debian 11 (Bullseye)
   - Debian 12 (Bookworm)
-  - Ubuntu 18.04 (Bionic Beaver)
   - Ubuntu 20.04 (Focal Fossa)
   - Ubuntu 22.04 (Jammy Jellyfish)
   - Ubuntu 24.04 (Noble Numbat)
@@ -27,16 +26,10 @@ The Microsoft repositories that can be configured from this collection are:
   - RHEL 7
   - RHEL 8[^2]
   - RHEL 9[^2]
-  - Fedora 37
-  - Fedora 38
-  - Fedora 39
-  - Fedora 40
-  - Fedora 41
   - Debian 9 (Stretch)
   - Debian 10 (Buster)
   - Debian 11 (Bullseye)
   - Debian 12 (Bookworm)
-  - Ubuntu 18.04 (Bionic Beaver)
   - Ubuntu 20.04 (Focal Fossa)
   - Ubuntu 22.04 (Jammy Jellyfish)
   - Ubuntu 24.04 (Noble Numbat)
@@ -49,7 +42,6 @@ The Microsoft repositories that can be configured from this collection are:
 - Microsoft SQL Server 2019:
   - RHEL 7
   - RHEL 8
-  - Ubuntu 18.04 (Bionic Beaver)
   - Ubuntu 20.04 (Focal Fossa)
 
 - Microsoft SQL Server 2022:
