@@ -82,18 +82,6 @@ foreman_products_microsoft_azure_cli_debian12:
         organization: "{{ foreman_organization_microsoft_azure_cli_debian12 }}"
         deb_releases: bookworm
 
-foreman_products_microsoft_azure_cli_ubuntu1804:
-  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
-    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
-    organization: "{{ foreman_organization_microsoft_azure_cli_ubuntu1804 }}"
-    repositories:
-      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Azure CLI for Ubuntu 18.04 (Bionic Beaver)"
-        label: "{{ foreman_repo_label_prefix | default('') }}azure-cli-ubuntu1804"
-        url: "{{ foreman_repo_baseurl_microsoft }}/repos/azure-cli/"
-        <<: *foreman_products_defaults_debian
-        organization: "{{ foreman_organization_microsoft_azure_cli_ubuntu1804 }}"
-        deb_releases: bionic
-
 foreman_products_microsoft_azure_cli_ubuntu2004:
   - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
     label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
@@ -137,7 +125,6 @@ foreman_products_microsoft_azure_cli: "{{ ( foreman_products_microsoft_azure_cli
   union( foreman_products_microsoft_azure_cli_debian10 | default([]) if foreman_enable_microsoft_azure_cli_debian10 | bool else [] ) |
   union( foreman_products_microsoft_azure_cli_debian11 | default([]) if foreman_enable_microsoft_azure_cli_debian11 | bool else [] ) |
   union( foreman_products_microsoft_azure_cli_debian12 | default([]) if foreman_enable_microsoft_azure_cli_debian12 | bool else [] ) |
-  union( foreman_products_microsoft_azure_cli_ubuntu1804 | default([]) if foreman_enable_microsoft_azure_cli_ubuntu1804 | bool else [] ) |
   union( foreman_products_microsoft_azure_cli_ubuntu2004 | default([]) if foreman_enable_microsoft_azure_cli_ubuntu2004 | bool else [] ) |
   union( foreman_products_microsoft_azure_cli_ubuntu2204 | default([]) if foreman_enable_microsoft_azure_cli_ubuntu2204 | bool else [] ) |
   union( foreman_products_microsoft_azure_cli_ubuntu2404 | default([]) if foreman_enable_microsoft_azure_cli_ubuntu2404 | bool else [] )
@@ -237,39 +224,6 @@ foreman_products_microsoft_prod_el9:
         <<: *foreman_products_defaults
         organization: "{{ foreman_organization_microsoft_prod_el9 }}"
 
-foreman_products_microsoft_prod_fedora37:
-  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
-    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
-    organization: "{{ foreman_organization_microsoft_prod_fedora37 }}"
-    repositories:
-      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Fedora 37"
-        label: "{{ foreman_repo_label_prefix | default('') }}microsoft-prod-fedora37"
-        url: "{{ foreman_repo_baseurl_microsoft }}/fedora/37/prod/"
-        <<: *foreman_products_defaults
-        organization: "{{ foreman_organization_microsoft_prod_fedora37 }}"
-
-foreman_products_microsoft_prod_fedora38:
-  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
-    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
-    organization: "{{ foreman_organization_microsoft_prod_fedora38 }}"
-    repositories:
-      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Fedora 38"
-        label: "{{ foreman_repo_label_prefix | default('') }}microsoft-prod-fedora38"
-        url: "{{ foreman_repo_baseurl_microsoft }}/fedora/38/prod/"
-        <<: *foreman_products_defaults
-        organization: "{{ foreman_organization_microsoft_prod_fedora38 }}"
-
-foreman_products_microsoft_prod_fedora39:
-  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
-    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
-    organization: "{{ foreman_organization_microsoft_prod_fedora39 }}"
-    repositories:
-      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Fedora 39"
-        label: "{{ foreman_repo_label_prefix | default('') }}microsoft-prod-fedora39"
-        url: "{{ foreman_repo_baseurl_microsoft }}/fedora/39/prod/"
-        <<: *foreman_products_defaults
-        organization: "{{ foreman_organization_microsoft_prod_fedora39 }}"
-
 foreman_products_microsoft_prod_debian9:
   - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
     label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
@@ -318,18 +272,6 @@ foreman_products_microsoft_prod_debian12:
         organization: "{{ foreman_organization_microsoft_prod_debian12 }}"
         deb_releases: bookworm
 
-foreman_products_microsoft_prod_ubuntu1804:
-  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
-    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
-    organization: "{{ foreman_organization_microsoft_prod_ubuntu1804 }}"
-    repositories:
-      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Ubuntu 18.04 (Bionic Beaver)"
-        label: "{{ foreman_repo_label_prefix | default('') }}microsoft-prod-ubuntu1804"
-        url: "{{ foreman_repo_baseurl_microsoft }}/ubuntu/18.04/prod/"
-        <<: *foreman_products_defaults_debian
-        organization: "{{ foreman_organization_microsoft_prod_ubuntu1804 }}"
-        deb_releases: bionic
-
 foreman_products_microsoft_prod_ubuntu2004:
   - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
     label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
@@ -371,9 +313,6 @@ foreman_products_microsoft_prod: "{{ ( foreman_products_microsoft_prod_main | de
   union( foreman_products_microsoft_prod_el7 | default([]) if foreman_enable_microsoft_prod_el7 | bool else [] ) |
   union( foreman_products_microsoft_prod_el8 | default([]) if foreman_enable_microsoft_prod_el8 | bool else [] ) |
   union( foreman_products_microsoft_prod_el9 | default([]) if foreman_enable_microsoft_prod_el9 | bool else [] ) |
-  union( foreman_products_microsoft_prod_fedora37 | default([]) if foreman_enable_microsoft_prod_fedora37 | bool else [] ) |
-  union( foreman_products_microsoft_prod_fedora38 | default([]) if foreman_enable_microsoft_prod_fedora38 | bool else [] ) |
-  union( foreman_products_microsoft_prod_fedora39 | default([]) if foreman_enable_microsoft_prod_fedora39 | bool else [] ) |
   union( foreman_products_microsoft_prod_debian9 | default([]) if foreman_enable_microsoft_prod_debian9 | bool else [] ) |
   union( foreman_products_microsoft_prod_debian10 | default([]) if foreman_enable_microsoft_prod_debian10 | bool else [] ) |
   union( foreman_products_microsoft_prod_debian11 | default([]) if foreman_enable_microsoft_prod_debian11 | bool else [] ) |
@@ -406,23 +345,10 @@ foreman_products_microsoft_mssql_server_2017_el8:
         <<: *foreman_products_defaults
         organization: "{{ foreman_organization_microsoft_mssql_server_2017_el8 }}"
 
-foreman_products_microsoft_mssql_server_2017_ubuntu1804:
-  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
-    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
-    organization: "{{ foreman_organization_microsoft_mssql_server_2017_ubuntu1804 }}"
-    repositories:
-      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft SQL Server 2017 - Ubuntu 18.04 (Bionic Beaver)"
-        label: "{{ foreman_repo_label_prefix | default('') }}mssql-server-2017-ubuntu1804"
-        url: "{{ foreman_repo_baseurl_microsoft }}/ubuntu/18.04/mssql-server-2017/"
-        <<: *foreman_products_defaults_debian
-        organization: "{{ foreman_organization_microsoft_mssql_server_2017_ubuntu1804 }}"
-        deb_releases: bionic
-
 foreman_products_microsoft_mssql_server_2017_main: []
 foreman_products_microsoft_mssql_server_2017: "{{ ( foreman_products_microsoft_mssql_server_2017_main | default([]) if foreman_enable_microsoft_mssql_server_2017 | bool else [] ) |
   union( foreman_products_microsoft_mssql_server_2017_el7 | default([]) if foreman_enable_microsoft_mssql_server_2017_el7 | bool else [] ) |
-  union( foreman_products_microsoft_mssql_server_2017_el8 | default([]) if foreman_enable_microsoft_mssql_server_2017_el8 | bool else [] ) |
-  union( foreman_products_microsoft_mssql_server_2017_ubuntu1804 | default([]) if foreman_enable_microsoft_mssql_server_2017_ubuntu1804 | bool else [] )
+  union( foreman_products_microsoft_mssql_server_2017_el8 | default([]) if foreman_enable_microsoft_mssql_server_2017_el8 | bool else [] )
   }}"
 
 
@@ -448,18 +374,6 @@ foreman_products_microsoft_mssql_server_2019_el8:
         <<: *foreman_products_defaults
         organization: "{{ foreman_organization_microsoft_mssql_server_2019_el8 }}"
 
-foreman_products_microsoft_mssql_server_2019_ubuntu1804:
-  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
-    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
-    organization: "{{ foreman_organization_microsoft_mssql_server_2019_ubuntu1804 }}"
-    repositories:
-      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft SQL Server 2019 - Ubuntu 18.04 (Bionic Beaver)"
-        label: "{{ foreman_repo_label_prefix | default('') }}mssql-server-2019-ubuntu1804"
-        url: "{{ foreman_repo_baseurl_microsoft }}/ubuntu/18.04/mssql-server-2019/"
-        <<: *foreman_products_defaults_debian
-        organization: "{{ foreman_organization_microsoft_mssql_server_2019_ubuntu1804 }}"
-        deb_releases: bionic
-
 foreman_products_microsoft_mssql_server_2019_ubuntu2004:
   - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
     label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
@@ -476,7 +390,6 @@ foreman_products_microsoft_mssql_server_2019_main: []
 foreman_products_microsoft_mssql_server_2019: "{{ ( foreman_products_microsoft_mssql_server_2019_main | default([]) if foreman_enable_microsoft_mssql_server_2019 | bool else [] ) |
   union( foreman_products_microsoft_mssql_server_2019_el7 | default([]) if foreman_enable_microsoft_mssql_server_2019_el7 | bool else [] ) |
   union( foreman_products_microsoft_mssql_server_2019_el8 | default([]) if foreman_enable_microsoft_mssql_server_2019_el8 | bool else [] ) |
-  union( foreman_products_microsoft_mssql_server_2019_ubuntu1804 | default([]) if foreman_enable_microsoft_mssql_server_2019_ubuntu1804 | bool else [] ) |
   union( foreman_products_microsoft_mssql_server_2019_ubuntu2004 | default([]) if foreman_enable_microsoft_mssql_server_2019_ubuntu2004 | bool else [] )
   }}"
 
@@ -606,14 +519,6 @@ foreman_content_views_microsoft_azure_cli_debian12:
         product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
     allow_promote: "{{ foreman_cv_allow_promote_microsoft_azure_cli_debian12 }}"
 
-foreman_content_views_microsoft_azure_cli_ubuntu1804:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_azure_cli_ubuntu1804"
-    organization: "{{ foreman_organization_microsoft_azure_cli_ubuntu1804 }}"
-    repositories:
-      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Azure CLI for Ubuntu 18.04 (Bionic Beaver)"
-        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
-    allow_promote: "{{ foreman_cv_allow_promote_microsoft_azure_cli_ubuntu1804 }}"
-
 foreman_content_views_microsoft_azure_cli_ubuntu2004:
   - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_azure_cli_ubuntu2004"
     organization: "{{ foreman_organization_microsoft_azure_cli_ubuntu2004 }}"
@@ -645,7 +550,6 @@ foreman_content_views_microsoft_azure_cli: "{{ ( foreman_products_microsoft_azur
   union( foreman_content_views_microsoft_azure_cli_debian10 | default([]) if foreman_enable_microsoft_azure_cli_debian10 | bool else [] ) |
   union( foreman_content_views_microsoft_azure_cli_debian11 | default([]) if foreman_enable_microsoft_azure_cli_debian11 | bool else [] ) |
   union( foreman_content_views_microsoft_azure_cli_debian12 | default([]) if foreman_enable_microsoft_azure_cli_debian12 | bool else [] ) |
-  union( foreman_content_views_microsoft_azure_cli_ubuntu1804 | default([]) if foreman_enable_microsoft_azure_cli_ubuntu1804 | bool else [] ) |
   union( foreman_content_views_microsoft_azure_cli_ubuntu2004 | default([]) if foreman_enable_microsoft_azure_cli_ubuntu2004 | bool else [] ) |
   union( foreman_content_views_microsoft_azure_cli_ubuntu2204 | default([]) if foreman_enable_microsoft_azure_cli_ubuntu2204 | bool else [] ) |
   union( foreman_content_views_microsoft_azure_cli_ubuntu2404 | default([]) if foreman_enable_microsoft_azure_cli_ubuntu2404 | bool else [] )
@@ -722,30 +626,6 @@ foreman_content_views_microsoft_prod_el9:
         product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
     allow_promote: "{{ foreman_cv_allow_promote_microsoft_prod_el9 }}"
 
-foreman_content_views_microsoft_prod_fedora37:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_prod_fedora37"
-    organization: "{{ foreman_organization_microsoft_prod_fedora37 }}"
-    repositories:
-      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Fedora 37"
-        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
-    allow_promote: "{{ foreman_cv_allow_promote_microsoft_prod_fedora37 }}"
-
-foreman_content_views_microsoft_prod_fedora38:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_prod_fedora38"
-    organization: "{{ foreman_organization_microsoft_prod_fedora38 }}"
-    repositories:
-      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Fedora 38"
-        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
-    allow_promote: "{{ foreman_cv_allow_promote_microsoft_prod_fedora38 }}"
-
-foreman_content_views_microsoft_prod_fedora39:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_prod_fedora39"
-    organization: "{{ foreman_organization_microsoft_prod_fedora39 }}"
-    repositories:
-      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Fedora 39"
-        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
-    allow_promote: "{{ foreman_cv_allow_promote_microsoft_prod_fedora39 }}"
-
 foreman_content_views_microsoft_prod_debian9:
   - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_prod_debian9"
     organization: "{{ foreman_organization_microsoft_prod_debian9 }}"
@@ -778,14 +658,6 @@ foreman_content_views_microsoft_prod_debian12:
         product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
     allow_promote: "{{ foreman_cv_allow_promote_microsoft_prod_debian12 }}"
 
-foreman_content_views_microsoft_prod_ubuntu1804:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_prod_ubuntu1804"
-    organization: "{{ foreman_organization_microsoft_prod_ubuntu1804 }}"
-    repositories:
-      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Ubuntu 18.04 (Bionic Beaver)"
-        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
-    allow_promote: "{{ foreman_cv_allow_promote_microsoft_prod_ubuntu1804 }}"
-
 foreman_content_views_microsoft_prod_ubuntu2004:
   - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_prod_ubuntu2004"
     organization: "{{ foreman_organization_microsoft_prod_ubuntu2004 }}"
@@ -815,14 +687,10 @@ foreman_content_views_microsoft_prod: "{{ ( foreman_products_microsoft_prod_main
   union( foreman_content_views_microsoft_prod_el7 | default([]) if foreman_enable_microsoft_prod_el7 | bool else [] ) |
   union( foreman_content_views_microsoft_prod_el8 | default([]) if foreman_enable_microsoft_prod_el8 | bool else [] ) |
   union( foreman_content_views_microsoft_prod_el9 | default([]) if foreman_enable_microsoft_prod_el9 | bool else [] ) |
-  union( foreman_content_views_microsoft_prod_fedora37 | default([]) if foreman_enable_microsoft_prod_fedora37 | bool else [] ) |
-  union( foreman_content_views_microsoft_prod_fedora38 | default([]) if foreman_enable_microsoft_prod_fedora38 | bool else [] ) |
-  union( foreman_content_views_microsoft_prod_fedora39 | default([]) if foreman_enable_microsoft_prod_fedora39 | bool else [] ) |
   union( foreman_content_views_microsoft_prod_debian9 | default([]) if foreman_enable_microsoft_prod_debian9 | bool else [] ) |
   union( foreman_content_views_microsoft_prod_debian10 | default([]) if foreman_enable_microsoft_prod_debian10 | bool else [] ) |
   union( foreman_content_views_microsoft_prod_debian11 | default([]) if foreman_enable_microsoft_prod_debian11 | bool else [] ) |
   union( foreman_content_views_microsoft_prod_debian12 | default([]) if foreman_enable_microsoft_prod_debian12 | bool else [] ) |
-  union( foreman_content_views_microsoft_prod_ubuntu1804 | default([]) if foreman_enable_microsoft_prod_ubuntu1804 | bool else [] ) |
   union( foreman_content_views_microsoft_prod_ubuntu2004 | default([]) if foreman_enable_microsoft_prod_ubuntu2004 | bool else [] ) |
   union( foreman_content_views_microsoft_prod_ubuntu2204 | default([]) if foreman_enable_microsoft_prod_ubuntu2204 | bool else [] ) |
   union( foreman_content_views_microsoft_prod_ubuntu2404 | default([]) if foreman_enable_microsoft_prod_ubuntu2404 | bool else [] )
@@ -845,19 +713,10 @@ foreman_content_views_microsoft_mssql_server_2017_el8:
         product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
     allow_promote: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2017_el8 }}"
 
-foreman_content_views_microsoft_mssql_server_2017_ubuntu1804:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}mssql_server_2017_ubuntu1804"
-    organization: "{{ foreman_organization_microsoft_mssql_server_2017_ubuntu1804 }}"
-    repositories:
-      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft SQL Server 2017 - Ubuntu 18.04 (Bionic Beaver)"
-        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
-    allow_promote: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2017_ubuntu1804 }}"
-
 foreman_content_views_microsoft_mssql_server_2017_main: []
 foreman_content_views_microsoft_mssql_server_2017: "{{ ( foreman_products_microsoft_mssql_server_2017_main | default([]) if foreman_enable_microsoft_mssql_server_2017 | bool else [] ) |
   union( foreman_content_views_microsoft_mssql_server_2017_el7 | default([]) if foreman_enable_microsoft_mssql_server_2017_el7 | bool else [] ) |
-  union( foreman_content_views_microsoft_mssql_server_2017_el8 | default([]) if foreman_enable_microsoft_mssql_server_2017_el8 | bool else [] ) |
-  union( foreman_content_views_microsoft_mssql_server_2017_ubuntu1804 | default([]) if foreman_enable_microsoft_mssql_server_2017_ubuntu1804 | bool else [] )
+  union( foreman_content_views_microsoft_mssql_server_2017_el8 | default([]) if foreman_enable_microsoft_mssql_server_2017_el8 | bool else [] )
   }}"
 
 
@@ -877,14 +736,6 @@ foreman_content_views_microsoft_mssql_server_2019_el8:
         product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
     allow_promote: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2019_el8 }}"
 
-foreman_content_views_microsoft_mssql_server_2019_ubuntu1804:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}mssql_server_2019_ubuntu1804"
-    organization: "{{ foreman_organization_microsoft_mssql_server_2019_ubuntu1804 }}"
-    repositories:
-      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft SQL Server 2019 - Ubuntu 18.04 (Bionic Beaver)"
-        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
-    allow_promote: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2019_ubuntu1804 }}"
-
 foreman_content_views_microsoft_mssql_server_2019_ubuntu2004:
   - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}mssql_server_2019_ubuntu2004"
     organization: "{{ foreman_organization_microsoft_mssql_server_2019_ubuntu2004 }}"
@@ -897,7 +748,6 @@ foreman_content_views_microsoft_mssql_server_2019_main: []
 foreman_content_views_microsoft_mssql_server_2019: "{{ ( foreman_products_microsoft_mssql_server_2019_main | default([]) if foreman_enable_microsoft_mssql_server_2019 | bool else [] ) |
   union( foreman_content_views_microsoft_mssql_server_2019_el7 | default([]) if foreman_enable_microsoft_mssql_server_2019_el7 | bool else [] ) |
   union( foreman_content_views_microsoft_mssql_server_2019_el8 | default([]) if foreman_enable_microsoft_mssql_server_2019_el8 | bool else [] ) |
-  union( foreman_content_views_microsoft_mssql_server_2019_ubuntu1804 | default([]) if foreman_enable_microsoft_mssql_server_2019_ubuntu1804 | bool else [] ) |
   union( foreman_content_views_microsoft_mssql_server_2019_ubuntu2004 | default([]) if foreman_enable_microsoft_mssql_server_2019_ubuntu2004 | bool else [] )
   }}"
 

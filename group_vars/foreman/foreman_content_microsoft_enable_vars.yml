@@ -15,7 +15,6 @@
 # foreman_enable_microsoft_azure_cli_debian10: false
 # foreman_enable_microsoft_azure_cli_debian11: false
 # foreman_enable_microsoft_azure_cli_debian12: false
-# foreman_enable_microsoft_azure_cli_ubuntu1804: false
 # foreman_enable_microsoft_azure_cli_ubuntu2004: false
 # foreman_enable_microsoft_azure_cli_ubuntu2204: false
 # foreman_enable_microsoft_azure_cli_ubuntu2404: false
@@ -35,14 +34,10 @@
 # foreman_enable_microsoft_prod_el7: false
 # foreman_enable_microsoft_prod_el8: "{{ foreman_enable_microsoft_prod | bool }}"
 # foreman_enable_microsoft_prod_el9: "{{ foreman_enable_microsoft_prod | bool }}"
-# foreman_enable_microsoft_prod_fedora37: false
-# foreman_enable_microsoft_prod_fedora38: false
-# foreman_enable_microsoft_prod_fedora39: false
 # foreman_enable_microsoft_prod_debian9: false
 # foreman_enable_microsoft_prod_debian10: false
 # foreman_enable_microsoft_prod_debian11: false
 # foreman_enable_microsoft_prod_debian12: false
-# foreman_enable_microsoft_prod_ubuntu1804: false
 # foreman_enable_microsoft_prod_ubuntu2004: false
 # foreman_enable_microsoft_prod_ubuntu2204: false
 # foreman_enable_microsoft_prod_ubuntu2404: false
@@ -50,12 +45,10 @@
 # foreman_enable_microsoft_mssql_server_2017: false
 # foreman_enable_microsoft_mssql_server_2017_el7: false
 # foreman_enable_microsoft_mssql_server_2017_el8: "{{ foreman_enable_microsoft_mssql_server_2017 | bool }}"
-# foreman_enable_microsoft_mssql_server_2017_ubuntu1804: false
 
 # foreman_enable_microsoft_mssql_server_2019: false
 # foreman_enable_microsoft_mssql_server_2019_el7: false
 # foreman_enable_microsoft_mssql_server_2019_el8: "{{ foreman_enable_microsoft_mssql_server_2019 | bool }}"
-# foreman_enable_microsoft_mssql_server_2019_ubuntu1804: false
 # foreman_enable_microsoft_mssql_server_2019_ubuntu2004: false
 
 # foreman_enable_microsoft_mssql_server_2022: false
