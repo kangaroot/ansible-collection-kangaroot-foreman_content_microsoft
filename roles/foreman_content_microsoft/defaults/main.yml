@@ -29,6 +29,7 @@ foreman_enable_microsoft_azure_cli_debian12: false
 foreman_enable_microsoft_azure_cli_ubuntu1804: false
 foreman_enable_microsoft_azure_cli_ubuntu2004: false
 foreman_enable_microsoft_azure_cli_ubuntu2204: false
+foreman_enable_microsoft_azure_cli_ubuntu2404: false
 
 foreman_enable_microsoft_edge: "{{ foreman_enable_microsoft | bool }}"
 
@@ -55,6 +56,7 @@ foreman_enable_microsoft_prod_debian12: false
 foreman_enable_microsoft_prod_ubuntu1804: false
 foreman_enable_microsoft_prod_ubuntu2004: false
 foreman_enable_microsoft_prod_ubuntu2204: false
+foreman_enable_microsoft_prod_ubuntu2404: false
 
 foreman_enable_microsoft_mssql_server_2017: false
 foreman_enable_microsoft_mssql_server_2017_el7: false
@@ -72,6 +74,10 @@ foreman_enable_microsoft_mssql_server_2022_el8: "{{ foreman_enable_microsoft_mss
 foreman_enable_microsoft_mssql_server_2022_el9: "{{ foreman_enable_microsoft_mssql_server_2022 | bool }}"
 foreman_enable_microsoft_mssql_server_2022_ubuntu2004: false
 foreman_enable_microsoft_mssql_server_2022_ubuntu2204: false
+
+foreman_enable_microsoft_mssql_server_2025: false
+foreman_enable_microsoft_mssql_server_2025_el9: "{{ foreman_enable_microsoft_mssql_server_2025 | bool }}"
+foreman_enable_microsoft_mssql_server_2025_ubuntu2204: false
 
 
 #######################################
@@ -105,6 +111,7 @@ foreman_organization_microsoft_azure_cli_debian12: "{{ foreman_organization_micr
 foreman_organization_microsoft_azure_cli_ubuntu1804: "{{ foreman_organization_microsoft_azure_cli }}"
 foreman_organization_microsoft_azure_cli_ubuntu2004: "{{ foreman_organization_microsoft_azure_cli }}"
 foreman_organization_microsoft_azure_cli_ubuntu2204: "{{ foreman_organization_microsoft_azure_cli }}"
+foreman_organization_microsoft_azure_cli_ubuntu2404: "{{ foreman_organization_microsoft_azure_cli }}"
 
 foreman_organization_microsoft_edge: "{{ foreman_organization_microsoft }}"
 
@@ -131,6 +138,7 @@ foreman_organization_microsoft_prod_debian12: "{{ foreman_organization_microsoft
 foreman_organization_microsoft_prod_ubuntu1804: "{{ foreman_organization_microsoft_prod }}"
 foreman_organization_microsoft_prod_ubuntu2004: "{{ foreman_organization_microsoft_prod }}"
 foreman_organization_microsoft_prod_ubuntu2204: "{{ foreman_organization_microsoft_prod }}"
+foreman_organization_microsoft_prod_ubuntu2404: "{{ foreman_organization_microsoft_prod }}"
 
 foreman_organization_microsoft_mssql_server_2017: "{{ foreman_organization_microsoft }}"
 foreman_organization_microsoft_mssql_server_2017_el7: "{{ foreman_organization_microsoft_mssql_server_2017 }}"
@@ -148,6 +156,10 @@ foreman_organization_microsoft_mssql_server_2022_el8: "{{ foreman_organization_m
 foreman_organization_microsoft_mssql_server_2022_el9: "{{ foreman_organization_microsoft_mssql_server_2022 }}"
 foreman_organization_microsoft_mssql_server_2022_ubuntu2004: "{{ foreman_organization_microsoft_mssql_server_2022 }}"
 foreman_organization_microsoft_mssql_server_2022_ubuntu2204: "{{ foreman_organization_microsoft_mssql_server_2022 }}"
+
+foreman_organization_microsoft_mssql_server_2025: "{{ foreman_organization_microsoft }}"
+foreman_organization_microsoft_mssql_server_2025_el9: "{{ foreman_organization_microsoft_mssql_server_2025 }}"
+foreman_organization_microsoft_mssql_server_2025_ubuntu2204: "{{ foreman_organization_microsoft_mssql_server_2025 }}"
 
 
 #######################################
@@ -168,6 +180,7 @@ foreman_cv_allow_promote_microsoft_azure_cli_debian12: "{{ foreman_cv_allow_prom
 foreman_cv_allow_promote_microsoft_azure_cli_ubuntu1804: "{{ foreman_cv_allow_promote_microsoft_azure_cli | bool }}"
 foreman_cv_allow_promote_microsoft_azure_cli_ubuntu2004: "{{ foreman_cv_allow_promote_microsoft_azure_cli | bool }}"
 foreman_cv_allow_promote_microsoft_azure_cli_ubuntu2204: "{{ foreman_cv_allow_promote_microsoft_azure_cli | bool }}"
+foreman_cv_allow_promote_microsoft_azure_cli_ubuntu2404: "{{ foreman_cv_allow_promote_microsoft_azure_cli | bool }}"
 
 foreman_cv_allow_promote_microsoft_edge: "{{ foreman_cv_allow_promote_microsoft | bool }}"
 
@@ -194,6 +207,7 @@ foreman_cv_allow_promote_microsoft_prod_debian12: "{{ foreman_cv_allow_promote_m
 foreman_cv_allow_promote_microsoft_prod_ubuntu1804: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
 foreman_cv_allow_promote_microsoft_prod_ubuntu2004: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
 foreman_cv_allow_promote_microsoft_prod_ubuntu2204: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
+foreman_cv_allow_promote_microsoft_prod_ubuntu2404: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
 
 foreman_cv_allow_promote_microsoft_mssql_server_2017: "{{ foreman_cv_allow_promote_microsoft | bool }}"
 foreman_cv_allow_promote_microsoft_mssql_server_2017_el7: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2017 | bool }}"
@@ -211,6 +225,10 @@ foreman_cv_allow_promote_microsoft_mssql_server_2022_el8: "{{ foreman_cv_allow_p
 foreman_cv_allow_promote_microsoft_mssql_server_2022_el9: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2022 | bool }}"
 foreman_cv_allow_promote_microsoft_mssql_server_2022_ubuntu2004: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2022 | bool }}"
 foreman_cv_allow_promote_microsoft_mssql_server_2022_ubuntu2204: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2022 | bool }}"
+
+foreman_cv_allow_promote_microsoft_mssql_server_2025: "{{ foreman_cv_allow_promote_microsoft | bool }}"
+foreman_cv_allow_promote_microsoft_mssql_server_2025_el9: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2025 | bool }}"
+foreman_cv_allow_promote_microsoft_mssql_server_2025_ubuntu2204: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2025 | bool }}"
 
 
 #######################################
@@ -230,7 +248,8 @@ foreman_content_credentials_microsoft: "{{ ( foreman_content_credentials_microso
   union( foreman_content_credentials_microsoft_prod | default([]) if foreman_enable_microsoft_prod | bool else [] ) |
   union( foreman_content_credentials_microsoft_mssql_server_2017 | default([]) if foreman_enable_microsoft_mssql_server_2017 | bool else [] ) |
   union( foreman_content_credentials_microsoft_mssql_server_2019 | default([]) if foreman_enable_microsoft_mssql_server_2019 | bool else [] ) |
-  union( foreman_content_credentials_microsoft_mssql_server_2022 | default([]) if foreman_enable_microsoft_mssql_server_2022 | bool else [] )
+  union( foreman_content_credentials_microsoft_mssql_server_2022 | default([]) if foreman_enable_microsoft_mssql_server_2022 | bool else [] ) |
+  union( foreman_content_credentials_microsoft_mssql_server_2025 | default([]) if foreman_enable_microsoft_mssql_server_2025 | bool else [] )
   }}"
 
 foreman_products_microsoft_main: []
@@ -241,7 +260,8 @@ foreman_products_microsoft: "{{ ( foreman_products_microsoft_main | default([]) 
   union( foreman_products_microsoft_prod | default([]) if foreman_enable_microsoft_prod | bool else [] ) |
   union( foreman_products_microsoft_mssql_server_2017 | default([]) if foreman_enable_microsoft_mssql_server_2017 | bool else [] ) |
   union( foreman_products_microsoft_mssql_server_2019 | default([]) if foreman_enable_microsoft_mssql_server_2019 | bool else [] ) |
-  union( foreman_products_microsoft_mssql_server_2022 | default([]) if foreman_enable_microsoft_mssql_server_2022 | bool else [] )
+  union( foreman_products_microsoft_mssql_server_2022 | default([]) if foreman_enable_microsoft_mssql_server_2022 | bool else [] ) |
+  union( foreman_products_microsoft_mssql_server_2025 | default([]) if foreman_enable_microsoft_mssql_server_2025 | bool else [] )
   }}"
 
 foreman_content_views_microsoft_main: []
@@ -252,7 +272,7 @@ foreman_content_views_microsoft: "{{ ( foreman_content_views_microsoft_main | de
   union( foreman_content_views_microsoft_prod | default([]) if foreman_enable_microsoft_prod | bool else [] ) |
   union( foreman_content_views_microsoft_mssql_server_2017 | default([]) if foreman_enable_microsoft_mssql_server_2017 | bool else [] ) |
   union( foreman_content_views_microsoft_mssql_server_2019 | default([]) if foreman_enable_microsoft_mssql_server_2019 | bool else [] ) |
-  union( foreman_content_views_microsoft_mssql_server_2022 | default([]) if foreman_enable_microsoft_mssql_server_2022 | bool else [] )
+  union( foreman_content_views_microsoft_mssql_server_2025 | default([]) if foreman_enable_microsoft_mssql_server_2025 | bool else [] )
   }}"
 
 foreman_activation_keys_microsoft_main: []
@@ -263,7 +283,8 @@ foreman_activation_keys_microsoft: "{{ ( foreman_activation_keys_microsoft_main 
   union( foreman_activation_keys_microsoft_prod | default([]) if foreman_enable_microsoft_prod | bool else [] ) |
   union( foreman_activation_keys_microsoft_mssql_server_2017 | default([]) if foreman_enable_microsoft_mssql_server_2017 | bool else [] ) |
   union( foreman_activation_keys_microsoft_mssql_server_2019 | default([]) if foreman_enable_microsoft_mssql_server_2019 | bool else [] ) |
-  union( foreman_activation_keys_microsoft_mssql_server_2022 | default([]) if foreman_enable_microsoft_mssql_server_2022 | bool else [] )
+  union( foreman_activation_keys_microsoft_mssql_server_2022 | default([]) if foreman_enable_microsoft_mssql_server_2022 | bool else [] ) |
+  union( foreman_activation_keys_microsoft_mssql_server_2025 | default([]) if foreman_enable_microsoft_mssql_server_2025 | bool else [] )
   }}"
 
 foreman_sync_plan_products_microsoft_main:
@@ -276,6 +297,7 @@ foreman_sync_plan_products_microsoft: "{{ ( foreman_sync_plan_products_microsoft
   union( foreman_sync_plan_products_microsoft_prod | default([]) if foreman_enable_microsoft_prod | bool else [] ) |
   union( foreman_sync_plan_products_microsoft_mssql_server_2017 | default([]) if foreman_enable_microsoft_mssql_server_2017 | bool else [] ) |
   union( foreman_sync_plan_products_microsoft_mssql_server_2019 | default([]) if foreman_enable_microsoft_mssql_server_2019 | bool else [] ) |
-  union( foreman_sync_plan_products_microsoft_mssql_server_2022 | default([]) if foreman_enable_microsoft_mssql_server_2022 | bool else [] )
+  union( foreman_sync_plan_products_microsoft_mssql_server_2022 | default([]) if foreman_enable_microsoft_mssql_server_2022 | bool else [] ) |
+  union( foreman_sync_plan_products_microsoft_mssql_server_2025 | default([]) if foreman_enable_microsoft_mssql_server_2025 | bool else [] )
   }}"
 

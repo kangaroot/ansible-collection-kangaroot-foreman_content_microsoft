@@ -22,6 +22,7 @@
 # foreman_cv_allow_promote_microsoft_azure_cli_ubuntu1804: "{{ foreman_cv_allow_promote_microsoft_azure_cli | bool }}"
 # foreman_cv_allow_promote_microsoft_azure_cli_ubuntu2004: "{{ foreman_cv_allow_promote_microsoft_azure_cli | bool }}"
 # foreman_cv_allow_promote_microsoft_azure_cli_ubuntu2204: "{{ foreman_cv_allow_promote_microsoft_azure_cli | bool }}"
+# foreman_cv_allow_promote_microsoft_azure_cli_ubuntu2404: "{{ foreman_cv_allow_promote_microsoft_azure_cli | bool }}"
 
 # foreman_cv_allow_promote_microsoft_edge: "{{ foreman_cv_allow_promote_microsoft | bool }}"
 
@@ -48,6 +49,7 @@
 # foreman_cv_allow_promote_microsoft_prod_ubuntu1804: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
 # foreman_cv_allow_promote_microsoft_prod_ubuntu2004: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
 # foreman_cv_allow_promote_microsoft_prod_ubuntu2204: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
+# foreman_cv_allow_promote_microsoft_prod_ubuntu2404: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
 
 # foreman_cv_allow_promote_microsoft_mssql_server_2017: "{{ foreman_cv_allow_promote_microsoft | bool }}"
 # foreman_cv_allow_promote_microsoft_mssql_server_2017_el7: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2017 | bool }}"
@@ -65,3 +67,7 @@
 # foreman_cv_allow_promote_microsoft_mssql_server_2022_el9: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2022 | bool }}"
 # foreman_cv_allow_promote_microsoft_mssql_server_2022_ubuntu2004: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2022 | bool }}"
 # foreman_cv_allow_promote_microsoft_mssql_server_2022_ubuntu2204: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2022 | bool }}"
+
+# foreman_cv_allow_promote_microsoft_mssql_server_2025: "{{ foreman_cv_allow_promote_microsoft | bool }}"
+# foreman_cv_allow_promote_microsoft_mssql_server_2025_el9: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2025 | bool }}"
+# foreman_cv_allow_promote_microsoft_mssql_server_2025_ubuntu2204: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2025 | bool }}"

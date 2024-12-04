@@ -18,6 +18,7 @@
 # foreman_enable_microsoft_azure_cli_ubuntu1804: false
 # foreman_enable_microsoft_azure_cli_ubuntu2004: false
 # foreman_enable_microsoft_azure_cli_ubuntu2204: false
+# foreman_enable_microsoft_azure_cli_ubuntu2404: false
 
 # foreman_enable_microsoft_edge: "{{ foreman_enable_microsoft | bool }}"
 
@@ -44,6 +45,7 @@
 # foreman_enable_microsoft_prod_ubuntu1804: false
 # foreman_enable_microsoft_prod_ubuntu2004: false
 # foreman_enable_microsoft_prod_ubuntu2204: false
+# foreman_enable_microsoft_prod_ubuntu2404: false
 
 # foreman_enable_microsoft_mssql_server_2017: false
 # foreman_enable_microsoft_mssql_server_2017_el7: false
@@ -61,3 +63,7 @@
 # foreman_enable_microsoft_mssql_server_2022_el9: "{{ foreman_enable_microsoft_mssql_server_2022 | bool }}"
 # foreman_enable_microsoft_mssql_server_2022_ubuntu2004: false
 # foreman_enable_microsoft_mssql_server_2022_ubuntu2204: false
+
+# foreman_enable_microsoft_mssql_server_2025: false
+# foreman_enable_microsoft_mssql_server_2025_el9: "{{ foreman_enable_microsoft_mssql_server_2025 | bool }}"
+# foreman_enable_microsoft_mssql_server_2025_ubuntu2204: false

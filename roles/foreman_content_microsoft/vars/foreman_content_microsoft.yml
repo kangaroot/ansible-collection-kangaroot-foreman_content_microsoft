@@ -118,6 +118,18 @@ foreman_products_microsoft_azure_cli_ubuntu2204:
         organization: "{{ foreman_organization_microsoft_azure_cli_ubuntu2204 }}"
         deb_releases: jammy
 
+foreman_products_microsoft_azure_cli_ubuntu2404:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_azure_cli_ubuntu2404 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Azure CLI for Ubuntu 24.04 (Noble Numbat)"
+        label: "{{ foreman_repo_label_prefix | default('') }}azure-cli-ubuntu2404"
+        url: "{{ foreman_repo_baseurl_microsoft }}/repos/azure-cli/"
+        <<: *foreman_products_defaults_debian
+        organization: "{{ foreman_organization_microsoft_azure_cli_ubuntu2204 }}"
+        deb_releases: noble
+
 foreman_products_microsoft_azure_cli_main: []
 foreman_products_microsoft_azure_cli: "{{ ( foreman_products_microsoft_azure_cli_main | default([]) if foreman_enable_microsoft_azure_cli | bool else [] ) |
   union( foreman_products_microsoft_azure_cli_el | default([]) if foreman_enable_microsoft_azure_cli_el | bool else [] ) |
@@ -127,7 +139,8 @@ foreman_products_microsoft_azure_cli: "{{ ( foreman_products_microsoft_azure_cli
   union( foreman_products_microsoft_azure_cli_debian12 | default([]) if foreman_enable_microsoft_azure_cli_debian12 | bool else [] ) |
   union( foreman_products_microsoft_azure_cli_ubuntu1804 | default([]) if foreman_enable_microsoft_azure_cli_ubuntu1804 | bool else [] ) |
   union( foreman_products_microsoft_azure_cli_ubuntu2004 | default([]) if foreman_enable_microsoft_azure_cli_ubuntu2004 | bool else [] ) |
-  union( foreman_products_microsoft_azure_cli_ubuntu2204 | default([]) if foreman_enable_microsoft_azure_cli_ubuntu2204 | bool else [] )
+  union( foreman_products_microsoft_azure_cli_ubuntu2204 | default([]) if foreman_enable_microsoft_azure_cli_ubuntu2204 | bool else [] ) |
+  union( foreman_products_microsoft_azure_cli_ubuntu2404 | default([]) if foreman_enable_microsoft_azure_cli_ubuntu2404 | bool else [] )
   }}"
 
 
@@ -341,6 +354,18 @@ foreman_products_microsoft_prod_ubuntu2204:
         organization: "{{ foreman_organization_microsoft_prod_ubuntu2204 }}"
         deb_releases: jammy
 
+foreman_products_microsoft_prod_ubuntu2404:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_prod_ubuntu2404 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Ubuntu 24.04 (Noble Numbat)"
+        label: "{{ foreman_repo_label_prefix | default('') }}microsoft-prod-ubuntu2404"
+        url: "{{ foreman_repo_baseurl_microsoft }}/ubuntu/24.04/prod/"
+        <<: *foreman_products_defaults_debian
+        organization: "{{ foreman_organization_microsoft_prod_ubuntu2404 }}"
+        deb_releases: noble
+
 foreman_products_microsoft_prod_main: []
 foreman_products_microsoft_prod: "{{ ( foreman_products_microsoft_prod_main | default([]) if foreman_enable_microsoft_prod | bool else [] ) |
   union( foreman_products_microsoft_prod_el7 | default([]) if foreman_enable_microsoft_prod_el7 | bool else [] ) |
@@ -353,9 +378,9 @@ foreman_products_microsoft_prod: "{{ ( foreman_products_microsoft_prod_main | de
   union( foreman_products_microsoft_prod_debian10 | default([]) if foreman_enable_microsoft_prod_debian10 | bool else [] ) |
   union( foreman_products_microsoft_prod_debian11 | default([]) if foreman_enable_microsoft_prod_debian11 | bool else [] ) |
   union( foreman_products_microsoft_prod_debian12 | default([]) if foreman_enable_microsoft_prod_debian12 | bool else [] ) |
-  union( foreman_products_microsoft_prod_ubuntu1804 | default([]) if foreman_enable_microsoft_prod_ubuntu1804 | bool else [] ) |
   union( foreman_products_microsoft_prod_ubuntu2004 | default([]) if foreman_enable_microsoft_prod_ubuntu2004 | bool else [] ) |
-  union( foreman_products_microsoft_prod_ubuntu2204 | default([]) if foreman_enable_microsoft_prod_ubuntu2204 | bool else [] )
+  union( foreman_products_microsoft_prod_ubuntu2204 | default([]) if foreman_enable_microsoft_prod_ubuntu2204 | bool else [] ) |
+  union( foreman_products_microsoft_prod_ubuntu2404 | default([]) if foreman_enable_microsoft_prod_ubuntu2404 | bool else [] )
   }}"
 
 
@@ -511,6 +536,36 @@ foreman_products_microsoft_mssql_server_2022: "{{ ( foreman_products_microsoft_m
   }}"
 
 
+foreman_products_microsoft_mssql_server_2025_el9:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_mssql_server_2025_el9 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft SQL Server 2025 - RHEL 9"
+        label: "{{ foreman_repo_label_prefix | default('') }}mssql-server-2025-el9"
+        url: "{{ foreman_repo_baseurl_microsoft }}/rhel/9/mssql-server-2025/"
+        <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_microsoft_mssql_server_2025_el9 }}"
+
+foreman_products_microsoft_mssql_server_2025_ubuntu2204:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_mssql_server_2025_ubuntu2204 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft SQL Server 2025 - Ubuntu 22.04 (Jammy Jellyfish)"
+        label: "{{ foreman_repo_label_prefix | default('') }}mssql-server-2025-ubuntu2204"
+        url: "{{ foreman_repo_baseurl_microsoft }}/ubuntu/22.04/mssql-server-2025/"
+        <<: *foreman_products_defaults_debian
+        organization: "{{ foreman_organization_microsoft_mssql_server_2025_ubuntu2204 }}"
+        deb_releases: jammy
+
+foreman_products_microsoft_mssql_server_2025_main: []
+foreman_products_microsoft_mssql_server_2025: "{{ ( foreman_products_microsoft_mssql_server_2025_main | default([]) if foreman_enable_microsoft_mssql_server_2025 | bool else [] ) |
+  union( foreman_products_microsoft_mssql_server_2025_el9 | default([]) if foreman_enable_microsoft_mssql_server_2025_el9 | bool else [] ) |
+  union( foreman_products_microsoft_mssql_server_2025_ubuntu2204 | default([]) if foreman_enable_microsoft_mssql_server_2025_ubuntu2204 | bool else [] )
+  }}"
+
+
 foreman_content_views_microsoft_azure_cli_el:
   - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_azure_cli_el"
     organization: "{{ foreman_organization_microsoft_azure_cli_el }}"
@@ -575,6 +630,14 @@ foreman_content_views_microsoft_azure_cli_ubuntu2204:
         product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
     allow_promote: "{{ foreman_cv_allow_promote_microsoft_azure_cli_ubuntu2204 }}"
 
+foreman_content_views_microsoft_azure_cli_ubuntu2404:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_azure_cli_ubuntu2404"
+    organization: "{{ foreman_organization_microsoft_azure_cli_ubuntu2404 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Azure CLI for Ubuntu 24.04 (Noble Numbat)"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_azure_cli_ubuntu2404 }}"
+
 foreman_content_views_microsoft_azure_cli_main: []
 foreman_content_views_microsoft_azure_cli: "{{ ( foreman_products_microsoft_azure_cli_main | default([]) if foreman_enable_microsoft_prod | bool else [] ) |
   union( foreman_content_views_microsoft_azure_cli_el | default([]) if foreman_enable_microsoft_azure_cli_el | bool else [] ) |
@@ -584,7 +647,8 @@ foreman_content_views_microsoft_azure_cli: "{{ ( foreman_products_microsoft_azur
   union( foreman_content_views_microsoft_azure_cli_debian12 | default([]) if foreman_enable_microsoft_azure_cli_debian12 | bool else [] ) |
   union( foreman_content_views_microsoft_azure_cli_ubuntu1804 | default([]) if foreman_enable_microsoft_azure_cli_ubuntu1804 | bool else [] ) |
   union( foreman_content_views_microsoft_azure_cli_ubuntu2004 | default([]) if foreman_enable_microsoft_azure_cli_ubuntu2004 | bool else [] ) |
-  union( foreman_content_views_microsoft_azure_cli_ubuntu2204 | default([]) if foreman_enable_microsoft_azure_cli_ubuntu2204 | bool else [] )
+  union( foreman_content_views_microsoft_azure_cli_ubuntu2204 | default([]) if foreman_enable_microsoft_azure_cli_ubuntu2204 | bool else [] ) |
+  union( foreman_content_views_microsoft_azure_cli_ubuntu2404 | default([]) if foreman_enable_microsoft_azure_cli_ubuntu2404 | bool else [] )
   }}"
 
 
@@ -738,6 +802,14 @@ foreman_content_views_microsoft_prod_ubuntu2204:
         product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
     allow_promote: "{{ foreman_cv_allow_promote_microsoft_prod_ubuntu2204 }}"
 
+foreman_content_views_microsoft_prod_ubuntu2404:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_prod_ubuntu2404"
+    organization: "{{ foreman_organization_microsoft_prod_ubuntu2404 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Ubuntu 24.04 (Noble Numbat)"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_prod_ubuntu2404 }}"
+
 foreman_content_views_microsoft_prod_main: []
 foreman_content_views_microsoft_prod: "{{ ( foreman_products_microsoft_prod_main | default([]) if foreman_enable_microsoft_prod | bool else [] ) |
   union( foreman_content_views_microsoft_prod_el7 | default([]) if foreman_enable_microsoft_prod_el7 | bool else [] ) |
@@ -752,7 +824,8 @@ foreman_content_views_microsoft_prod: "{{ ( foreman_products_microsoft_prod_main
   union( foreman_content_views_microsoft_prod_debian12 | default([]) if foreman_enable_microsoft_prod_debian12 | bool else [] ) |
   union( foreman_content_views_microsoft_prod_ubuntu1804 | default([]) if foreman_enable_microsoft_prod_ubuntu1804 | bool else [] ) |
   union( foreman_content_views_microsoft_prod_ubuntu2004 | default([]) if foreman_enable_microsoft_prod_ubuntu2004 | bool else [] ) |
-  union( foreman_content_views_microsoft_prod_ubuntu2204 | default([]) if foreman_enable_microsoft_prod_ubuntu2204 | bool else [] )
+  union( foreman_content_views_microsoft_prod_ubuntu2204 | default([]) if foreman_enable_microsoft_prod_ubuntu2204 | bool else [] ) |
+  union( foreman_content_views_microsoft_prod_ubuntu2404 | default([]) if foreman_enable_microsoft_prod_ubuntu2404 | bool else [] )
   }}"
 
 
@@ -867,5 +940,28 @@ foreman_content_views_microsoft_mssql_server_2022: "{{ ( foreman_products_micros
   union( foreman_content_views_microsoft_mssql_server_2022_el9 | default([]) if foreman_enable_microsoft_mssql_server_2022_el9 | bool else [] ) |
   union( foreman_content_views_microsoft_mssql_server_2022_ubuntu2004 | default([]) if foreman_enable_microsoft_mssql_server_2022_ubuntu2004 | bool else [] ) |
   union( foreman_content_views_microsoft_mssql_server_2022_ubuntu2204 | default([]) if foreman_enable_microsoft_mssql_server_2022_ubuntu2204 | bool else [] )
+  }}"
+
+
+foreman_content_views_microsoft_mssql_server_2025_el9:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}mssql_server_2025_el9"
+    organization: "{{ foreman_organization_microsoft_mssql_server_2025_el9 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft SQL Server 2025 - RHEL 9"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2025_el9 }}"
+
+foreman_content_views_microsoft_mssql_server_2025_ubuntu2204:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}mssql_server_2025_ubuntu2204"
+    organization: "{{ foreman_organization_microsoft_mssql_server_2025_ubuntu2204 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft SQL Server 2025 - Ubuntu 22.04 (Jammy Jellyfish)"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2025_ubuntu2204 }}"
+
+foreman_content_views_microsoft_mssql_server_2025_main: []
+foreman_content_views_microsoft_mssql_server_2025: "{{ ( foreman_products_microsoft_mssql_server_2025_main | default([]) if foreman_enable_microsoft_mssql_server_2025 | bool else [] ) |
+  union( foreman_content_views_microsoft_mssql_server_2025_el9 | default([]) if foreman_enable_microsoft_mssql_server_2025_el9 | bool else [] ) |
+  union( foreman_content_views_microsoft_mssql_server_2025_ubuntu2204 | default([]) if foreman_enable_microsoft_mssql_server_2025_ubuntu2204 | bool else [] )
   }}"
 

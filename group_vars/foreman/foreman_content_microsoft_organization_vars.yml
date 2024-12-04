@@ -18,6 +18,7 @@
 # foreman_organization_microsoft_azure_cli_ubuntu1804: "{{ foreman_organization_microsoft_azure_cli }}"
 # foreman_organization_microsoft_azure_cli_ubuntu2004: "{{ foreman_organization_microsoft_azure_cli }}"
 # foreman_organization_microsoft_azure_cli_ubuntu2204: "{{ foreman_organization_microsoft_azure_cli }}"
+# foreman_organization_microsoft_azure_cli_ubuntu2404: "{{ foreman_organization_microsoft_azure_cli }}"
 
 # foreman_organization_microsoft_edge: "{{ foreman_organization_microsoft }}"
 
@@ -44,6 +45,7 @@
 # foreman_organization_microsoft_prod_ubuntu1804: "{{ foreman_organization_microsoft_prod }}"
 # foreman_organization_microsoft_prod_ubuntu2004: "{{ foreman_organization_microsoft_prod }}"
 # foreman_organization_microsoft_prod_ubuntu2204: "{{ foreman_organization_microsoft_prod }}"
+# foreman_organization_microsoft_prod_ubuntu2404: "{{ foreman_organization_microsoft_prod }}"
 
 # foreman_organization_microsoft_mssql_server_2017: "{{ foreman_organization_microsoft }}"
 # foreman_organization_microsoft_mssql_server_2017_el7: "{{ foreman_organization_microsoft_mssql_server_2017 }}"
@@ -61,3 +63,7 @@
 # foreman_organization_microsoft_mssql_server_2022_el9: "{{ foreman_organization_microsoft_mssql_server_2022 }}"
 # foreman_organization_microsoft_mssql_server_2022_ubuntu2004: "{{ foreman_organization_microsoft_mssql_server_2022 }}"
 # foreman_organization_microsoft_mssql_server_2022_ubuntu2204: "{{ foreman_organization_microsoft_mssql_server_2022 }}"
+
+# foreman_organization_microsoft_mssql_server_2025: "{{ foreman_organization_microsoft }}"
+# foreman_organization_microsoft_mssql_server_2025_el9: "{{ foreman_organization_microsoft_mssql_server_2025 }}"
+# foreman_organization_microsoft_mssql_server_2025_ubuntu2204: "{{ foreman_organization_microsoft_mssql_server_2025 }}"
